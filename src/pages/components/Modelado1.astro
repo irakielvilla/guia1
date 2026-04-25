@@ -1,0 +1,224 @@
+---
+
+---
+<div id="ContenedorPrin">
+    <div id="Pizarra">
+        <img class="pizarraimg" src="/public/Pizarra.png" alt="">
+        
+    </div>
+
+    <div id="barraizquierda">
+    </div>
+
+    <div id="Pestanatitulo">
+    </div>
+
+    <div id="barraderecha">
+            <img class="barradere" src="/public/barraderecha.svg" alt="">
+    </div>
+
+        <div id="ejer11">
+            <a href=""><img class="ejers" src="/public/eje11.svg" alt=""></a>
+        </div>
+
+        <div id="ejer12">
+            <a href=""><img class="ejers" src="/public/ejer12.svg" alt=""></a>
+        </div>
+
+        <div id="ejer13">
+            <a href=""><img class="ejers" src="/public/ejer13.svg" alt=""></a>
+        </div>
+
+        <div id="ejer14">
+            <a href=""><img class="ejers" src="/public/ejer14.svg" alt=""></a>
+        </div>
+
+    <div id="aopcion">
+        <a href=""><img class="opciones" src="/public/aopcion.svg" alt=""></a>
+    </div>
+
+    <div id="bopcion">
+        <a href=""><img class="opciones" src="/public/bopcion.svg" alt=""></a>
+    </div>
+
+    <div id="copcion">
+        <a href=""><img class="opciones2" src="/public/copcion.svg" alt=""></a>
+    </div>
+
+    <div id="mod1">
+        <img class="opcionesdere" src="/public/1mod.svg" alt="">
+    </div>
+    
+    <div id="rec2">
+        <img class="opcionesdere" src="/public/2rec.svg" alt="">
+    </div>
+    
+    <div id="ple3">
+        <img  class="opcionesdere" src="/public/3ple.svg" alt="">
+    </div>
+
+    <div id="col4">
+        <img class="opcionesdere" src="/public/4col.svg" alt="">
+    </div>
+</div>
+
+<style>
+    #ContenedorPrin{
+        /* 3. Tu contenedor principal para diagramar los botones, textos,etc*/
+    /* MEDIDAS EXACTAS*/
+    width: 1400px;
+    height: 650px;
+    
+    display: grid;
+    /* 28 columnas(1fr para que sean iguales) */
+    grid-template-columns: repeat(28, 1fr);
+    /* 14 filas de igual tamaño */
+    grid-template-rows: repeat(14, 1fr);
+    background-image: 
+      linear-gradient(to right, rgba(0,0,0,0.1) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0,0,0,0.1) 1px, transparent 1px);
+    background-size: calc(1400px / 28) calc(650px / 14);
+
+    }
+
+    #Pizarra {
+        grid-column: 6/24;
+        grid-row: 5/14;
+        z-index: 1 ;
+        display: flex;           /* Activa el modo flexible */
+        justify-content: center; /* Centra horizontalmente (Eje X) */
+        align-items: center;     /* Centra verticalmente (Eje Y) */
+        padding-bottom: 25px;
+    }
+    .pizarraimg{
+    object-fit: contain;
+    }
+
+    #barraizquierda{
+        grid-column: 2/19;
+        grid-row: 2/14;
+        background-image: url('/public/barraizquierda.png');
+        background-size: 100% 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    #Pestanatitulo{
+        grid-column: 16/24;
+        grid-row: 4/6;
+        background-image: url(' /public/Pestanatitulo.svg');
+        background-size: 100% 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        
+    }
+
+    #ejer11{
+        grid-column: 26/27;
+        grid-row: 5/7;
+        display: flex;           
+        justify-content: center; 
+        align-items: center;
+    }
+
+    #ejer12{
+        grid-column: 26/27;
+        grid-row: 8/9;
+        display: flex;           
+        justify-content: center; 
+        align-items: center;
+    }
+    #ejer13{
+        grid-column: 26/27;
+        grid-row: 10/11;
+        display: flex;           
+        justify-content: center; 
+        align-items: center;
+    }
+    #ejer14{
+        grid-column: 26/27;
+        grid-row: 12/13;
+        display: flex;           
+        justify-content: center; 
+        align-items: center;
+        z-index: 1;
+    }
+    .ejers{
+        width: 100%;
+    }
+#barraderecha{
+    padding-top: 20px;
+    grid-column: 25/28;
+    grid-row: 3/15;
+    object-fit: none;
+}
+.barradere{
+    padding-right: 6px;
+    
+}
+
+#aopcion{
+    grid-column: 4/8;
+    grid-row: 1/4;
+    display: flex;
+    justify-content: center;
+}
+
+#bopcion{
+    grid-column:9/12 ;
+    grid-row: 1/4;
+    display: flex;
+    justify-content: center;
+}
+
+#copcion{
+    grid-column:14/17 ;
+    grid-row: 1/4;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.opciones{
+    padding-top: 14px ;
+    height: 100%;
+}
+
+.opciones2{
+    padding-right: 5px; /*ARREGLAR ESTOOOO*/
+    height: 100%;
+    padding-top: 14px ;
+}
+
+#mod1{
+    grid-column: 1/5;
+    grid-row:5/7 ;
+    min-width: 0; 
+    overflow: hidden; /* Evita que la imagen empuje los bordes del div */
+    align-content: center;
+}
+#rec2{
+    grid-column:2/6 ;
+    grid-row: 8/9;
+    display: flex;
+    min-width: 0; 
+    overflow: hidden; 
+}
+#ple3{
+    grid-column:2/6 ;
+    grid-row:10/11 ;
+    display: flex;
+    min-width: 0; 
+    overflow: hidden; 
+}
+
+#col4{
+    grid-column:2/6 ;
+    grid-row:12/13;
+    display: flex;
+    min-width: 0; 
+    overflow: hidden; 
+}
+.opcionesdere{
+    width: ;
+}
+</style>
