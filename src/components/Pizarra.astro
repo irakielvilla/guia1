@@ -10,6 +10,12 @@ const { miejercicio } = Astro.props;
 
 // ESTO ES PARA DEPURAR: Verás el resultado en la terminal de VS Code
 console.log("Datos recibidos en Pizarra:", miejercicio);
+// ESTA ES LA CLAVE: Si miejercicio no existe, creamos uno vacío 
+// para que el build no se rompa
+if (!miejercicio) {
+  return Astro.redirect('/'); 
+  // O simplemente: const miejercicio = { video: '', titulo: '', instruccion: '' };
+}
 ---
 <div id="pizarracomp">
     <div class="pizarraprincipal">
@@ -59,7 +65,6 @@ video {
   width: 100% !important;
   height: auto !important;
   min-height: 300px; /* Dale una altura mínima para ver si aparece */
-  background-color: red; /* Esto te confirmará si el elemento está ahí */
 }
 
 </style>
