@@ -2,12 +2,14 @@
 import Pizarrapuntoa from "../../../components/Pizarrapuntoa.astro";
 // Antes tenías: "./layouts/PaginaMaestra1.astro"
 import PaginaMaestrapuntoa from "../../layouts/PaginaMaestrapuntoa.astro";
+import tablatutorial from "../../../../tablatutorial.json"; 
 
+// Buscamos la información específica por ID
+const info = tablatutorial.find(item => item.id === "puntoa-a");
 
-//const miejercicio = tablavideos.find(item => item.id === "modelado1-1")!;
-//import tablavideos from "../../../../tablavideos.json";
-//Recibimos los datos como parámetros
-//const { instruccion, titulo } = Astro.props;
+const { id, titulo, pag1, pag2, pag3, pag4} = Astro.props;
+// Si no encuentra el ID, no renderizamos nada para evitar errores
+if (!info) return null;
 ---
 <PaginaMaestrapuntoa>
 <div id="ContenedorPrin">
@@ -38,13 +40,13 @@ import PaginaMaestrapuntoa from "../../layouts/PaginaMaestrapuntoa.astro";
         </svg>
     </div>
     
-        <Pizarrapuntoa></Pizarrapuntoa>
+        <Pizarrapuntoa info={info}></Pizarrapuntoa>
     <div id="pizarrabase">
         <img class="esquinas" src="/esquinasazul.png" alt="">
     </div>
 
     <div id="Pestanatitulo">
-        <img src="" alt="">
+        <img class="titulo" src={info.titulo} alt="">
     </div>
 
             
@@ -100,9 +102,9 @@ import PaginaMaestrapuntoa from "../../layouts/PaginaMaestrapuntoa.astro";
 
 
     #Pestanatitulo{
+        grid: flex;
         grid-column: 16/24;
         grid-row: 4/6;
-        max-width: 100%;
         
     }
 

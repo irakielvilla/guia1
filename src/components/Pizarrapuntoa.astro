@@ -1,6 +1,7 @@
 ---
+
 // Recibimos los datos como parámetros
-const { miinfo } = Astro.props;
+const { info } = Astro.props;
 ---
 <div id="pizarracomp">
     <div class="pizarraprincipal">
@@ -16,31 +17,39 @@ const { miinfo } = Astro.props;
     <!-- Contenedor Swiper -->
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
-        <!-- Página 1 -->
-        <div class="swiper-slide">
-          <div class="info-content">
-            <h3>Instrucciones del Ejercicio</h3>
-            <p>hola</p>
-          </div>
-        </div>
-        <!-- Página 2 -->
-        <div class="swiper-slide">
-          <div class="info-content">
-            <h3>Objetivos</h3>
-            <ul>
-              <li>Desarrollar motricidad fina.</li>
-              <li>Mejorar la coordinación ojo-mano.</li>
-            </ul>
-          </div>
-        </div>
-        <!-- Página 3 -->
-        <div class="swiper-slide">
-          <div class="info-content">
-            <h3>Materiales Necesarios</h3>
-            <p>Plastilina de colores, tablero de madera y espátulas plásticas.</p>
-          </div>
+        <!-- PÁGINA 1: Siempre presente si existe el ID -->
+    {info.pag1 && (
+      <div class="swiper-slide">
+        <div class="texto-pizarra">
+          <p>{info.pag1}</p>
         </div>
       </div>
+    )}
+        <!-- Página 2 -->
+       {info.pag2 && (
+      <div class="swiper-slide">
+        <div class="texto-pizarra">
+          <p>{info.pag2}</p>
+        </div>
+      </div>
+    )}
+        <!-- PÁGINA 3: Solo se muestra si tiene contenido -->
+    {info.pag3 && (
+      <div class="swiper-slide">
+        <div class="texto-pizarra">
+          <p>{info.pag3}</p>
+        </div>
+      </div>
+    )}
+    <!-- PÁGINA 4: Solo se muestra si la 3 existe Y la 4 tiene contenido -->
+    {info.pag3 && info.pag4 && (
+      <div class="swiper-slide">
+        <div class="texto-pizarra">
+          <p>{info.pag4}</p>
+        </div>
+      </div>
+    )}
+  </div>
       
       <!-- Paginación (Opcional: los puntitos) -->
       <div class="swiper-pagination"></div>
