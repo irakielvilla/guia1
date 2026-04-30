@@ -1,12 +1,19 @@
 ---
+// import Swiper JS
+import Swiper from 'swiper';
+// import Swiper styles
+import 'swiper/css';
+// Recibimos los datos como parámetros
+// const { videos } = Astro.props;
+// Recibimos los datos
+const { miejercicio } = Astro.props;
 
+// ESTO ES PARA DEPURAR: Verás el resultado en la terminal de VS Code
+console.log("Datos recibidos en Pizarra:", miejercicio);
 ---
 <div id="pizarracomp">
     <div class="pizarraprincipal">
-        
-    <video id="video-p">
-        <source src="/videos/Agarrar1-1.webm" type="video/webm">
-        </video>
+    <video id="video-p" src={miejercicio.video} controls> </video>
     <div id="bordeazul">
     </div>
     </div>
@@ -48,5 +55,11 @@ height: 100%;
     border-radius: 20px;
 }
 
+video {
+  width: 100% !important;
+  height: auto !important;
+  min-height: 300px; /* Dale una altura mínima para ver si aparece */
+  background-color: red; /* Esto te confirmará si el elemento está ahí */
+}
 
 </style>

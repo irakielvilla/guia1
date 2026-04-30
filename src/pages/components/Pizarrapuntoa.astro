@@ -1,0 +1,284 @@
+---
+// Recibimos los datos como parámetros
+const { miinfo } = Astro.props;
+---
+<div id="pizarracomp">
+    <div class="pizarraprincipal">
+        <div id="bordeazul"></div>
+    </div>
+</div>
+<div id="infomarco">
+    <div id="izquierda" class="navegacion">
+        <button class="btn-limpio swiper-button-prev-custom">
+            <img src="/carrusel/bnavegacion.png" alt="">
+        </button>
+    </div>
+    <!-- Contenedor Swiper -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <!-- Página 1 -->
+        <div class="swiper-slide">
+          <div class="info-content">
+            <h3>Instrucciones del Ejercicio</h3>
+            <p>hola</p>
+          </div>
+        </div>
+        <!-- Página 2 -->
+        <div class="swiper-slide">
+          <div class="info-content">
+            <h3>Objetivos</h3>
+            <ul>
+              <li>Desarrollar motricidad fina.</li>
+              <li>Mejorar la coordinación ojo-mano.</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Página 3 -->
+        <div class="swiper-slide">
+          <div class="info-content">
+            <h3>Materiales Necesarios</h3>
+            <p>Plastilina de colores, tablero de madera y espátulas plásticas.</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Paginación (Opcional: los puntitos) -->
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <button class="btn-limpio swiper-button-next-custom">
+      <img src="/carrusel/bnavegacion.png" alt="Siguiente">
+    </button>
+  </div>
+
+
+</div>
+<!-- <div id="carrusel">
+    <div class="carrusel-item">
+        <img src="/carrusel/carrusel1.png" alt="">
+    </div>
+    <div class="carrusel-item">
+        <img src="/carrusel/carrusel2.png" alt="">
+    </div>
+    <div class="carrusel-item">
+        <img src="/carrusel/carrusel3.png" alt="">
+    </div>
+    <div class="carrusel-item">
+        <img src="/carrusel/carrusel4.png" alt="">
+    </div>
+</div> -->
+
+<style>
+    /* Importes base */
+  @import "swiper/css";
+  @import "swiper/css/navigation";
+  @import "swiper/css/pagination";
+
+ /* Contenedor de la paginación */
+.swiper-pagination {
+    position: relative !important; /* Lo saca de encima del contenido si es necesario */
+    bottom: 0 !important;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 100px;
+    grid-row: 11/12;
+}
+
+/* Estilo de los puntos inactivos */
+.swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background-color: #ccc; /* Color gris suave */
+    opacity: 0.5;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Estilo del punto activo */
+.swiper-pagination-bullet-active {
+    width: 30px; /* Se estira para indicar posición */
+    border-radius: 10px; /* Forma de píldora */
+    background-color: #007aff; /* Usa un color complementario a tu diseño */
+    opacity: 1;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Profundidad */
+}
+
+  .mySwiper {
+    width: 100%;
+    height: 300px; /* Ajusta según tu diseño */
+    border-radius: 15px;
+    background: transparent !important;;
+  }
+
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent !important; /* Asegura que el fondo de las slides sea transparente */
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .info-content {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 14.2pt;
+    font-weight: 300;
+    color: #ffffff;
+  }
+
+  .navegacion-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+/* Estilo para tus botones personalizados */
+.btn-limpio {
+  cursor: pointer;
+  border: none;
+  background: none;
+  cursor: pointer;
+    pointer-events: all; /* Asegura que el botón capture el clic */
+}
+
+.pizarraprincipal{
+    background-color: #ffffff;
+    border-radius: 20px; 
+/* border: 20px solid #188AE3; */
+box-sizing: border-box;
+
+
+display: flex;
+justify-content: center;
+align-items: center;
+overflow: hidden;
+position: relative;
+
+width: 100%;
+height: 100%;
+}
+
+.pizarraprincipal video{
+    width: 101%;
+    height: auto;
+}
+
+#pizarracomp{
+    background-color: #F4DB74;
+    grid-column: 6/24;
+    grid-row: 5/14;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 20px;
+}
+
+#infomarco {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+
+    font-family: 'Fredoka', sans-serif;
+    font-size: 14.2pt;
+    font-weight: 300;
+    color: #ffffff;
+    grid-column: 8/22;
+    grid-row: 6/13;
+    z-index: 3;
+    margin-top: 16px;
+    margin-bottom: 16px;
+
+    /* 1. Color de fondo y forma */
+    background-color: #006eb5; /* El azul de la referencia */
+    border-radius: 40px; /* Bordes redondeados pronunciados */
+    
+    /* 2. El borde claro que pediste */
+    /* Un grosor de 8px a 12px suele verse bien para este estilo infantil/educativo */
+    border: 10px solid #00A6E1;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+#info-central{
+    grid-column: 2/6;
+    grid-row: 2/9;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+#izquierda{
+   transform: rotate(180deg);
+}
+
+#derecha{
+    
+}
+
+.navegacion button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    
+}
+
+#carrusel{
+    
+    grid-column: 9/21;
+grid-row: 11/12;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding: 20px;
+    z-index: 4;
+}
+
+.navegacion  {
+    position: relative;
+    z-index: 10; /* Esto los trae al frente de todo */
+}
+.swiper-button-disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+</style>
+
+<script>
+  import Swiper from 'swiper';
+  import { Navigation, Pagination } from 'swiper/modules';
+  
+
+  const swiper = new Swiper(".mySwiper", {
+    modules: [Navigation, Pagination],
+    cssMode: true,
+    // Eliminamos la configuración de navigation de aquí dentro 
+    // para controlarlo nosotros mismos abajo
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+      
+    },
+  });
+
+  // Seleccionamos tus botones personalizados
+  const btnIzq = document.querySelector('.swiper-button-prev-custom');
+  const btnDer = document.querySelector('.swiper-button-next-custom');
+
+  // Les asignamos la orden de mover el carrusel
+  btnIzq?.addEventListener('click', () => {
+    swiper.slidePrev();
+  });
+
+  btnDer?.addEventListener('click', () => {
+    swiper.slideNext();
+  });
+
+  
+</script>
