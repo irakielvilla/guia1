@@ -19,10 +19,12 @@ if (!miejercicio) {
 ---
 <div id="pizarracomp">
     <div class="pizarraprincipal">
-    <video id="video-p" src={miejercicio.video} autoplay muted playsinline controls> </video>
-    <div id="bordeazul">
+        <video id="video-p" src={miejercicio.video} autoplay muted playsinline controls> </video>
+        <div id="bordeazul"> </div>
     </div>
-    </div>
+</div>
+<div id="contenedor-info">
+        <p set:html={miejercicio.instruccion}></p>
 </div>
 
 <style>
@@ -65,6 +67,31 @@ video {
   width: 100% !important;
   height: auto !important;
   min-height: 300px; /* Dale una altura mínima para ver si aparece */
+}
+
+#contenedor-info{
+    grid-row: 6/13;
+    grid-column: 6/10;
+    background-color: #188ae3;
+    z-index: 5;
+    border-radius: 20px;
+    padding-top: 40px;
+    border-radius: 0px 20px 20px 0px;
+    margin: 34px 0px 34px 0px;
+    border-top: 8.9px solid #ead40a;
+    border-right: 8.9px solid #ead40a;
+    border-bottom: 8.9px solid #ead40a;
+    
+
+    
+}
+#contenedor-info p{
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 300;
+    color: #ffffff;
+    text-align: center;
+    padding-left: 25px;
+    text-align: left;
 }
 
 </style>

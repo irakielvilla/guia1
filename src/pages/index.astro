@@ -2,7 +2,33 @@
 import PaginaMaestra1 from "./layouts/PaginaMaestra1.astro";
 //aqui va codigo dinamico
 ---
-<PaginaMaestra1>    <a href="/b-motricidad/modelado1/modelado1-1/"><div>CLICK AQUI</div></a>
-                    <a href="/a-partida/puntoa/puntoa-a/"><div>CLICK AQUI PERO EN AMARILLO</div></a>
+<PaginaMaestra1>
+                <div id="indexx">
+                    <a href="/b-motricidad/modelado1/modelado1-1"><div>CLICK AQUI PERO EN AZUL</div></a>
+                    <a href="/a-partida/puntoa/puntoa-a"><div>CLICK AQUI PERO EN AMARILLO</div></a>
+                    <a href="/c-pregraficos/trazos/trazos1"><div>CLICK AQUI PERO EN ROJO</div></a>
+                </div>
 </PaginaMaestra1>
 
+<style>
+    #indexx{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        margin-top: 50px;
+    }
+    #indexx a div{
+        padding: 20px 40px;
+        background-color: lightblue;
+        border-radius: 10px;
+        font-size: 18px;
+        font-weight: bold;
+        color: black;
+        transition: background-color 0.3s ease;
+    }
+    #indexx a div:hover{
+        background-color: deepskyblue;
+    }
+
+</style>

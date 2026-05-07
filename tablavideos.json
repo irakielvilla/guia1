@@ -4,5 +4,71 @@
         "titulo": "/titulos/agarrar-y-picar.svg",
         "video": "/videos/agarrar1-1.webm",
         "instruccion": "Toma la plastilina y pícala utilizando las yemas de los dedos, haciendo pequeños pellizcos. "
+    },
+    {
+        "id": "modelado1-2",
+        "titulo": "/titulos/bolitas.svg",
+        "video": "/videos/bolitas.webm",
+        "instruccion": "Coloca un pedacito de plastilina sobre la mesa y rueda con la palma de la mano hasta formar bolitas"
+    },
+    {
+        "id": "modelado1-3",
+        "titulo": "/titulos/aplastar.svg",
+        "video": "/videos/aplastar.webm",
+        "instruccion": "Toma una bolita y presiónala con el dedo índice y el pulgar hasta aplanarla bien."
+    },
+    {
+        "id": "modelado1-4",
+        "titulo": "/titulos/culebrita.svg",
+        "video": "/videos/bolitas.webm",
+        "instruccion": "Desliza la plastilina sobre la mesa con la palma de la mano hasta formar tiras largas tipo culebra. "
+    },
+    {
+        "id": "recortado2-1",
+        "titulo": "/titulos/2.1recortever.svg",
+        "video": "/videos/recortado1.webm",
+        "instruccion": "Recorta siguiendo la línea desde abajo hacia arriba."
+    },
+    {
+        "id": "recortado2-2",
+        "titulo": "/titulos/2.2recortehori.svg",
+        "video": "/videos/recortado2.webm",
+        "instruccion": "Recorta siguiendo la línea horizontal, avanzando según tu mano dominante (derecha o izquierda)."
+    },
+    {
+        "id": "recortado2-3",
+        "titulo": "/titulos/2.3recortezig.svg",
+        "video": "/videos/recortado3.webm",
+        "instruccion": "Recorta siguiendo la línea con movimientos hacia arriba y hacia abajo."
+    },
+    {
+        "id": "recortado2-4",
+        "titulo": "/titulos/2.4recorteli.svg",
+        "video": "/videos/recortado4.webm",
+        "instruccion": "Recorta el papel libremente utilizando la tijera de forma controlada."
+    },
+    {
+        "id": "plegado3-1",
+        "titulo": "/titulos/3.1plegado.svg",
+        "video": "/videos/plegado1.mp4",
+        "instruccion": "Lleva la parte de abajo de la hoja hacia arriba hasta unir los bordes y presiona el doblez."
+    },
+    {
+        "id": "plegado3-2",
+        "titulo": "/titulos/3.2plegado.svg",
+        "video": "/videos/plegado2.mp4",
+        "instruccion": "Dobla la hoja de un extremo al otro, uniendo los lados largos, y marca el doblez con firmeza."
+    },
+    {
+        "id": "plegado3-3",
+        "titulo": "/titulos/3.3plegado.svg",
+        "video": "/videos/plegado3.mp4",
+        "instruccion": "Primero dobla la hoja de un extremo al otro.<br>Luego, dóblala nuevamente de abajo hacia arriba para formar cuatro partes iguales."
+    },
+    {
+        "id": "plegado3-4",
+        "titulo": "/titulos/3.4plegado.svg",
+        "video": "/videos/plegado4.mp4",
+        "instruccion": "Dobla la hoja de un lado hacia el otro hasta unir los bordes y marca el doblez presionando con los dedos"
     }
 ]
