@@ -68,3 +68,13 @@ Desarrollo: Componente Pizarra refactorizado para soportar contenido dinámico d
 Incidencias Técnicas:
 
 Error detectado: fatal: unable to access ... Could not resolve host: github.com. Esto indica un problema temporal de conexión a internet o de DNS en el equipo local al intentar hacer git push.
+
+Chuleta para subir los cambios a Github
+Resumen rápido de comandos:
+git status (opcional, para ver qué cambió).
+
+git add .
+
+git commit -m "mensaje"
+
+git push origin main

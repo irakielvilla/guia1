@@ -41,7 +41,7 @@ const {video,instruccion, titulo } = Astro.props;
     
         <Pizarra miejercicio={miejercicio}></Pizarra>
     <div id="pizarrabase">
-        <img class="esquinas" src="/esquinas.png" alt="">
+        <img class="esquinas" src="/esquinas.svg" alt="">
     </div>
 
     <div id="Pestanatitulo">
@@ -82,31 +82,33 @@ const {video,instruccion, titulo } = Astro.props;
   /* width: auto;      Que el ancho se ajuste solo para no deformarse */
 }
     #ContenedorPrin{
-        /* 3. Tu contenedor principal para diagramar los botones, textos,etc*/
-    /* MEDIDAS EXACTAS*/
+        display: grid;
     width: 1400px;
     height: 650px;
     
-    display: grid;
-    /* 28 columnas(1fr para que sean iguales) */
-    grid-template-columns: repeat(28, 1fr);
-    /* 14 filas de igual tamaño */
-    grid-template-rows: repeat(14, 1fr);
-        background-image: 
-        linear-gradient(to right, rgba(0,0,0,0.1) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(0,0,0,0.1) 1px, transparent 1px);
-        background-size: calc(1400px / 28) calc(650px / 14); 
+    /* Definición de Columnas: 30 módulos de 41.12px y 29 medianiles de 5.74px */
+    grid-template-columns: repeat(30, 41.12px);
+    column-gap: 5.74px;
 
+    /* Definición de Filas: 14 módulos de 41.12px y 13 medianiles de 5.74px */
+    grid-template-rows: repeat(14, 41.12px);
+    row-gap: 5.74px;
+
+    /* Opcional: para visualizar la retícula durante el diseño */
+    /* outline: 1px solid red; 
+    background-image: 
+        linear-gradient(to right, rgba(0,0,0,0.1) 41.12px, transparent 5.74px),
+        linear-gradient(to bottom, rgba(0,0,0,0.1) 41.12px, transparent 5.74px);
+    background-size: calc(41.12px + 5.74px) calc(41.12px + 5.74px); */
     }
 
     #Pizarra {
-        grid-column: 6/24;
-        grid-row: 5/14;
+        grid-column: 7/27;
+        grid-row: 4/14;
         z-index: 1 ;
         display: flex;           /* Activa el modo flexible */
         justify-content: center; /* Centra horizontalmente (Eje X) */
         align-items: center;     /* Centra verticalmente (Eje Y) */
-        padding-bottom: 25px;
     }
     .pizarraimg{
     object-fit: contain;
@@ -155,7 +157,7 @@ const {video,instruccion, titulo } = Astro.props;
     }
 #barraderecha{
     padding-top: 20px;
-    grid-column: 25/28;
+    grid-column: 27/31;
     grid-row: 3/15;
     object-fit: none;
 }
@@ -171,24 +173,27 @@ const {video,instruccion, titulo } = Astro.props;
 }
 
 #pizarrabase{
-    background-color: #188AE3;
 
 
     border-radius: 50px;
-    grid-column: 6/24;
-    grid-row: 5/14;
+    grid-column: 6/27;
+    grid-row: 4/15;
     z-index: 2;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 40px 40px 40px 40px;
+
     
 }
 
 
 
 #barraizquier{
-    grid-column: 1/19;
+    grid-column: 1/20;
     grid-row: 1/14;
+
+
   
 }
 
@@ -199,10 +204,10 @@ const {video,instruccion, titulo } = Astro.props;
 }
 
 .esquinas{
-    max-width: 102%;
-    height: 102%;
-    z-index: 1;
-    padding-left: 0.5%;
+    width: 100%;
+    height: 100%;
+
+    object-fit: fill;
 }
 
 #repro{
