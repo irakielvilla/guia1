@@ -22,59 +22,63 @@ Despliegue: Vercel (Sensible a mayúsculas/minúsculas en nombres de archivos).
 
 Librerías Clave: Swiper.js (Modo CSS) para carruseles de información.
 
-Gestión de Datos: Archivos JSON locales para contenido dinámico.
+Gestión de Datos: Archivos JSON locales (`tablavideos.json`, `tablatutorial.json`) para contenido dinámico.
 
 Arquitectura y Reglas de Código
 Organización de Archivos:
 
-Los componentes reutilizables (como Pizarra.astro) deben residir en src/components/.
+- Los componentes reutilizables (como Pizarra.astro) deben residir en src/components/.
+- No colocar componentes en src/pages/ para evitar errores de renderizado de rutas estáticas.
 
-No colocar componentes en src/pages/ para evitar errores de renderizado de rutas estáticas.
+Componente Pizarra.astro (Núcleo de Actividades):
+
+- Funciona como un contenedor inteligente que recibe el objeto `miejercicio` como prop.
+- Encapsula su propio CSS y lógica de control de video (Play/Pausa, Replay).
+- Utiliza `set:html` para renderizar las instrucciones, permitiendo el uso de etiquetas HTML (ej. `<br>`) desde el JSON.
+- Incluye una validación de seguridad: si no recibe datos, redirige al inicio para evitar errores de compilación.
 
 Tipografía y Estilos:
 
-Fuentes principales: Coiny y Fredoka, declaradas vía @font-face.
-
-Alineación: Uso de text-align: left y white-space: pre-line para textos de JSON.
-
-Bordes: Uso de box-shadow múltiple para bordes externos que no afecten el layout y desaparezcan en el lado izquierdo.
+- Fuentes principales: Coiny y Fredoka, declaradas vía @font-face en el layout global.
+- Alineación: Uso de text-align: left y white-space: pre-line para textos de JSON cuando sea necesario.
+- Bordes: Uso de box-shadow múltiple para efectos visuales premium en la interfaz.
 
 Nomenclatura y Rutas:
 
-Uso estricto de minúsculas para archivos en public/.
-
-Referencias a activos mediante rutas absolutas (ej. /videos/nombre.webm).
+- Uso estricto de minúsculas para archivos en public/.
+- Referencias a activos mediante rutas absolutas (ej. /videos/nombre.webm).
 
 Lógica de Componentes Dinámicos
 Estructura de Contenido (Secciones):
 
-Punto de partida (Estructura JSON específica para introducción y bases).
+- Punto de partida: Introducción y bases del aprendizaje.
+- Motricidad Fina: Actividades de modelado y pinza (Sección B).
+- Pregraficos simples: Trazos iniciales (Sección C).
 
-Motricidad Fina (Actividades de modelado y pinza).
+Gestión de Datos:
 
-Pregraficos simples (Trazos iniciales).
+- `tablavideos.json`: Contiene el ID, ruta del video, título (SVG) e instrucciones de cada ejercicio.
+- Las páginas de ejercicios buscan su respectivo objeto mediante el ID (ej. `tablavideos.find(i => i.id === 'modelado1-1')`).
 
 Reglas de Renderizado:
 
-Validación obligatoria de propiedades (ej. {info.pag3 && ...}) para evitar errores de undefined.
-
-Continuidad: En carruseles de 4 páginas, si la página 3 está vacía, la página 4 no se muestra automáticamente para mantener la coherencia.
+- Validaciones obligatorias de propiedades en carruseles para evitar errores de undefined.
+- Continuidad lógica: En carruseles, si falta contenido en una página intermedia, las siguientes no se muestran para mantener la coherencia.
 
 Estado Actual del Proyecto
 Infraestructura: Migración a Node 22 completada y repositorio vinculado a GitHub.
 
-Desarrollo: Componente Pizarra refactorizado para soportar contenido dinámico desde archivos como excel2json-1777561535309.json.
+Desarrollo:
+- Componente `Pizarra.astro` totalmente modularizado y funcional.
+- Limpieza de código completada: se eliminaron redundancias de CSS y JS en las páginas de ejercicios individuales.
+- Lógica de video estabilizada con soporte para reinicio y control de estado.
 
 Incidencias Técnicas:
-
-Error detectado: fatal: unable to access ... Could not resolve host: github.com. Esto indica un problema temporal de conexión a internet o de DNS en el equipo local al intentar hacer git push.
+- Error intermitente detectado: `fatal: unable to access ...`. Generalmente asociado a problemas temporales de DNS o conexión a internet.
+- Resuelto: Problema de duplicidad de estilos y scripts en el componente Pizarra que causaba comportamientos erráticos.
 
 Chuleta para subir los cambios a Github
-Resumen rápido de comandos:
-git status (opcional, para ver qué cambió).
-
-git add .
-
-git commit -m "mensaje"
-
-git push origin main
+1. git status (opcional).
+2. git add .
+3. git commit -m "mensaje"
+4. git push origin main

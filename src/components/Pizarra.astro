@@ -1,8 +1,8 @@
 ---
 // import Swiper JS
-import Swiper from 'swiper';
+import Swiper from "swiper";
 // import Swiper styles
-import 'swiper/css';
+import "swiper/css";
 // Recibimos los datos como parámetros
 // const { videos } = Astro.props;
 // Recibimos los datos
@@ -10,48 +10,66 @@ const { miejercicio } = Astro.props;
 
 // ESTO ES PARA DEPURAR: Verás el resultado en la terminal de VS Code
 console.log("Datos recibidos en Pizarra:", miejercicio);
-// ESTA ES LA CLAVE: Si miejercicio no existe, creamos uno vacío 
+// ESTA ES LA CLAVE: Si miejercicio no existe, creamos uno vacío
 // para que el build no se rompa
 if (!miejercicio) {
-  return Astro.redirect('/'); 
+  return Astro.redirect("/");
   // O simplemente: const miejercicio = { video: '', titulo: '', instruccion: '' };
 }
 ---
+
+<div id="pizarrabase">
+  <img class="esquinas" src="/esquinas.svg" alt="" />
+</div>
+
+<div id="Pestanatitulo">
+  <img src={miejercicio.titulo} alt="" />
+</div>
+
+<div id="repro">
+  <button id="btn-play-pausa" class="botonrepro"
+    ><img class="reprod" src="/botonplay.svg" alt="Play/Pausa" />
+  </button>
+  <button id="btn-replay" class="botonrepro"
+    ><img class="reprod" src="/botonreplay.svg" alt="Replay" />
+  </button>
+</div>
+
 <div id="pizarracomp">
-    <div class="pizarraprincipal">
-        <video id="video-p" src={miejercicio.video} autoplay muted playsinline controls> </video>
-        <div id="bordeazul"> </div>
-    </div>
+  <div class="pizarraprincipal">
+    <video
+      id="video-p"
+      src={miejercicio.video}
+      autoplay
+      muted
+      playsinline
+      controls
+    >
+    </video>
+    <div id="bordeazul"></div>
+  </div>
 </div>
 <div id="contenedor-info">
-        <p set:html={miejercicio.instruccion}></p>
+  <p set:html={miejercicio.instruccion}></p>
 </div>
 
 <style>
-.pizarraprincipal{
+  .pizarraprincipal {
+    display: flex;
     background-color: #ffffff;
-    border-radius: 20px; 
-/* border: 20px solid #188AE3; */
-box-sizing: border-box;
+    border-radius: 20px;
+    /* border: 20px solid #188AE3; */
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+  }
 
-
-display: flex;
-justify-content: center;
-align-items: center;
-overflow: hidden;
-position: relative;
-
-width: 100%;
-height: 100%;
-}
-
-.pizarraprincipal video{
-    width: 101%;
-    height: auto;
-}
-
-#pizarracomp{
-    background-color: #83D3FF;
+  #pizarracomp {
+    background-color: #83d3ff;
     grid-column: 7/26;
     grid-row: 5/14;
     z-index: 3;
@@ -59,33 +77,28 @@ height: 100%;
     justify-content: center;
     align-items: center;
     padding: 20px;
-    margin: 22px 20px 20px 22px;
+    margin: 2.38%;
     border-radius: 20px;
-}
+  }
 
-video {
-  width: 100% !important;
-  height: auto !important;
-  min-height: 300px; /* Dale una altura mínima para ver si aparece */
-}
+  video {
+    overflow: hidden;
+  }
 
-#contenedor-info{
+  #contenedor-info {
     grid-row: 6/13;
     grid-column: 7/13;
     background-color: #188ae3;
-    z-index: 5;;
+    z-index: 5;
     padding-top: 40px;
     border-radius: 0px 54px 54px 0px;
-    margin: 42px 35px 41px 42px;
-    border-top: 5.9px solid #0468AD;
-    border-right: 5.9px solid #0468AD;
-    border-bottom: 5.9px solid #0468AD;
-    
-
-    
-}
-#contenedor-info p{
-    font-family: 'Fredoka', sans-serif;
+    margin: 15% 13% 15% 15%;
+    border-top: 5.9px solid #0468ad;
+    border-right: 5.9px solid #0468ad;
+    border-bottom: 5.9px solid #0468ad;
+  }
+  #contenedor-info p {
+    font-family: "Fredoka", sans-serif;
     font-weight: 300;
     color: #ffffff;
     text-align: center;
@@ -95,6 +108,104 @@ video {
     letter-spacing: -0.4px;
     line-height: 1.35;
     text-align: left;
-}
+  }
 
+  #pizarrabase {
+    border-radius: 50px;
+    grid-column: 6/27;
+    grid-row: 4/15;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 40px 40px 40px;
+  }
+
+  .esquinas {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  #Pestanatitulo {
+    grid-column: 16/24;
+    grid-row: 4/6;
+    max-width: 100%;
+  }
+
+  #repro {
+    grid-row: 8/11;
+    grid-column: 25/27;
+    display: flex;
+    z-index: 1;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 35%;
+  }
+
+  #repro button {
+    background: none;
+    border: none;
+    padding: 0px;
+    cursor: pointer;
+  }
+
+  .reprod {
+    width: 100%;
+  }
+
+  #Pestanatitulo {
+            margin-left:8.8%;
+            margin-right: 8.8%;
+            grid-column: 17/27;
+            grid-row: 4/6;
+            max-width: 100%;
+        }
+
+  
 </style>
+
+<script>
+  const inicializarVideo = () => {
+    const video =
+      (document.getElementById("video-p") as HTMLVideoElement) ||
+      document.querySelector("video");
+    const btnPlay = document.getElementById("btn-play-pausa");
+    const btnReplay = document.getElementById("btn-replay");
+
+    console.log("--- Reporte de Conexión ---");
+    console.log("Video encontrado:", !!video);
+    console.log("Botón Play encontrado:", !!btnPlay);
+    console.log("Botón Replay encontrado:", !!btnReplay);
+
+    if (video && btnPlay && btnReplay) {
+      btnPlay.onclick = () => {
+        if (video.paused) {
+          video.play();
+          console.log("▶️ Reproduciendo...");
+        } else {
+          video.pause();
+          console.log("⏸️ Pausado.");
+        }
+      };
+
+      btnReplay.onclick = () => {
+        video.currentTime = 0;
+        video.play();
+        console.log("🔄 Replay activado.");
+      };
+
+      console.log("✅ ¡Todo listo! Los botones ya controlan el video.");
+    } else {
+      console.error(
+        "❌ Error: No se pudo establecer la conexión. Revisa que los IDs coincidan."
+      );
+    }
+  };
+
+  // Ejecución inmediata al cargar el componente
+  inicializarVideo();
+
+  // Refuerzo: Astro a veces necesita un pequeño respiro para juntar los componentes
+  setTimeout(inicializarVideo, 500);
+</script>
