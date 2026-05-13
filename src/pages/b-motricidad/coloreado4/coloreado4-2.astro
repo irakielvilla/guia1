@@ -1,0 +1,145 @@
+---
+//import Pizarra from "./components/Pizarra.astro";
+import Pizarra from "../../../components/Pizarra.astro";
+// Antes tenías: "./layouts/PaginaMaestra1.astro"
+import PaginaMaestra1 from "../../layouts/PaginaMaestra1.astro";
+// Importamos el nuevo componente
+import Barraizquierda from "../../../components/barraizquierda.astro";
+// Importamos el JSON (como en tu foto)
+import tablavideos from "../../../../tablavideos.json";
+
+// Buscamos el ejercicio que coincida con esta página
+const miejercicio = tablavideos.find((item) => item.id === "coloreado4-2");
+
+// Recibimos los datos como parámetros
+const { video, instruccion, titulo, bdere1, bdere2, bdere3, bdere4 } =
+    Astro.props;
+---
+
+<PaginaMaestra1>
+    <div id="ContenedorPrin">
+        <!--inicio chorrera de codigo -->
+        <Barraizquierda section="coloreado" />
+        <!--fin chorrera de codigo -->
+
+
+        <Pizarra miejercicio={miejercicio} />
+
+        <div id="barraderecha">
+            <img class="barradere" src="/barraderecha.svg" alt="" />
+        </div>
+
+        <div id="bbarraderecha">
+            <a href="/b-motricidad/coloreado4/coloreado4-1/"
+                ><img class="ejers" src={miejercicio.bdere1} alt="" />
+            </a>
+
+            <a href="/b-motricidad/coloreado4/coloreado4-2/"
+                ><img class="ejers" src={miejercicio.bdere2} alt="" />
+            </a>
+
+            <a href="/b-motricidad/coloreado4/coloreado4-3/"
+                ><img class="ejers" src={miejercicio.bdere3} alt="" />
+            </a>
+
+            <a href="/b-motricidad/coloreado4/coloreado4-4/"
+                ><img class="ejers" src={miejercicio.bdere4} alt="" />
+            </a>
+        </div>
+    </div>
+
+    <style>
+        #ContenedorPrin {
+            display: grid;
+            width: 1400px;
+            height: 650px;
+            overflow: visible;
+
+            /* Definición de Columnas: 30 módulos de 41.12px y 29 medianiles de 5.74px */
+            grid-template-columns: repeat(30, 41.12px);
+            column-gap: 5.74px;
+
+            /* Definición de Filas: 14 módulos de 41.12px y 13 medianiles de 5.74px */
+            grid-template-rows: repeat(14, 41.12px);
+            row-gap: 5.74px;
+
+            /* Opcional: para visualizar la retícula durante el diseño */
+            /* outline: 1px solid red; 
+    background-image: 
+        linear-gradient(to right, rgba(0,0,0,0.1) 41.12px, transparent 5.74px),
+        linear-gradient(to bottom, rgba(0,0,0,0.1) 41.12px, transparent 5.74px);
+    background-size: calc(41.12px + 5.74px) calc(41.12px + 5.74px); */
+        }
+
+        #Pizarra {
+            grid-column: 7/27;
+            grid-row: 4/14;
+            z-index: 1;
+            display: flex; /* Activa el modo flexible */
+            justify-content: center; /* Centra horizontalmente (Eje X) */
+            align-items: center; /* Centra verticalmente (Eje Y) */
+        }
+        .pizarraimg {
+            object-fit: contain;
+        }
+
+        
+
+        #bbarraderecha {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            row-gap: 11.8%;
+            grid-column: 27/30;
+            grid-row: 6/15;
+            object-fit: none;
+            margin-left: 27%;
+            margin-right: 27%;
+        }
+
+        .ejerdiv {
+            max-width: 100%;
+            max-height: 10%;
+        }
+
+        .ejers {
+            width: 100%;
+            height: 95%;
+            overflow: hidden;
+        }
+
+        .ejers:hover {
+            transform: scale(1.25);
+        }
+        #barraderecha {
+            grid-column: 26/31;
+            grid-row: 3/15;
+            object-fit: none;
+            padding-top: 12%;
+            margin-left: 15%;
+        }
+        .barradere {
+        }
+
+        .opciones2 {
+            padding-right: 5px; /*ARREGLAR ESTOOOO*/
+            height: 100%;
+            padding-top: 14px;
+        }
+
+        #barraizquier {
+            grid-column: 1/21;
+            grid-row: 1/14;
+        }
+
+        .barraiz {
+            width: 100%;
+            height: 100%;
+        }
+
+        .pregracc:hover {
+            color: blue;
+        }
+    </style>
+</PaginaMaestra1>

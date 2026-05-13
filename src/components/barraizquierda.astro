@@ -1,0 +1,60 @@
+---
+import Barramodelado from './svgs/Barramodelado.astro';
+import Barracoloreado from './svgs/Barracoloreado.astro';
+import Barraplegado from './svgs/Barraplegado.astro';
+import Barrarecortado from './svgs/Barrarecortado.astro'; // Si es diferente, si no, reutiliza uno de los anteriores
+// Importa los demás según los crees
+
+const { section } = Astro.props;
+
+// Mapeo dinámico
+const COMPONENTS = {
+  modelado: Barramodelado, 
+  coloreado: Barracoloreado,
+    plegado: Barraplegado, 
+    recortado: Barrarecortado, // Ajustar según corresponda
+};
+
+const SelectedBarra = COMPONENTS[section] || Barramodelado;
+---
+
+<div id="barraizquier" class="barraizquier">
+    <SelectedBarra />
+</div>
+
+<style>
+    #barraizquier {
+        grid-column: 1 / 21;
+        grid-row: 1 / 14;
+        display: flex;
+        align-items: flex-start !important;
+        justify-content: flex-end !important;
+    }
+    
+    /* Hacemos que el SVG ocupe el espacio del contenedor */
+    :global(.barraizquier svg) {
+        width: 100%;
+        overflow: visible;
+        display: block;
+    }
+
+    /* Aplicamos :global para que el hover funcione sobre los IDs internos del SVG */
+    :global(#puntoa:hover),
+    :global(#motricidadb:hover),
+    :global(#grafomotrizc:hover) {
+        transform: scale(1.15);
+        transform-origin: center center !important;
+        transform-box: fill-box;
+        cursor: pointer;
+    }
+    
+    :global(#modelado1:hover),
+    :global(#recortado2:hover),
+    :global(#plegado3:hover),
+    :global(#coloreado4:hover) {
+        transform: scale(1.09);
+        transform-origin: center center !important;
+        transform-box: fill-box;
+        cursor: pointer;
+    }
+</style>

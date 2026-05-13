@@ -1,43 +1,47 @@
-# Astro Starter Kit: Minimal
+# Guía 1 - Motricidad
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Proyecto web interactiva construida en Astro para el desarrollo de la motricidad fina y la coordinación visomotora en niños de 3 a 4 años.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 📌 Objetivo del proyecto
 
-## 🚀 Project Structure
+- Crear una plataforma con actividades pedagógicas guiadas.
+- Trabajar conceptos de espacio gráfico, orden de trazos y uso de herramientas básicas.
+- Usar contenido dinámico con JSON local para mantener el sitio modular.
 
-Inside of your Astro project, you'll see the following folders and files:
+## 🚧 Estado actual del proyecto
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+- Infraestructura lista en Astro con Node.js 22.
+- Componentes principales implementados: `Pizarra.astro`, `Pizarrapregra.astro`, `Pizarrapuntoa.astro` y `Barraplegado.astro`.
+- Layouts configurados: `PaginaMaestra1.astro` y `PaginaMaestrapuntoa.astro`.
+- Sección A (Punto de Partida): página introductoria `puntoa-a.astro` completada.
+- Sección B (Motricidad Fina): 12 actividades parcialmente implementadas.
+  - `modelado1-1` a `modelado1-4`
+  - `plegado3-1` a `plegado3-4`
+  - `recortado2-1` a `recortado2-4`
+  - Coloreado 4: estructura preparada, contenido por completar.
+- Sección C (Pregraficos): `trazos1.astro` implementada; números y vocales en preparación.
+- Datos configurados en `tablavideos.json` y `tablatutorial.json`.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 🧩 Arquitectura
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+- `src/pages/`: páginas y rutas del sitio.
+- `src/components/`: componentes reutilizables.
+- `public/`: activos estáticos como imágenes, fuentes y videos.
+- JSON locales para mantener ejercicios y tutoriales separados de la UI.
 
-Any static assets, like images, can be placed in the `public/` directory.
+## ⚙️ Comandos útiles
 
-## 🧞 Commands
+| Comando                   | Acción                                              |
+| :------------------------ | :-------------------------------------------------- |
+| `npm install`             | Instala dependencias                                 |
+| `npm run dev`             | Inicia servidor local                                |
+| `npm run build`           | Genera el sitio de producción                        |
+| `npm run preview`         | Previsualiza el build local                          |
 
-All commands are run from the root of the project, from a terminal:
+## 📍 Notas adicionales
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- El estado detallado del proyecto también está documentado en `agents.md`.
+- Para publicar cambios:
+  1. `git add .`
+  2. `git commit -m "Actualiza documentación y estado del proyecto"`
+  3. `git push origin main`

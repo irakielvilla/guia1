@@ -15,7 +15,7 @@
         "video": "/videos/12v.webm",
         "instruccion": "Coloca un pedacito de plastilina sobre la mesa y rueda con la palma de la mano hasta formar bolitas",
         "bdere1": "/barraderecha/11.svg",
-        "bdere2": "/barraderecha/12.svg",
+        "bdere2": "/barraderecha/12si.svg",
         "bdere3": "/barraderecha/13.svg",
         "bdere4": "/barraderecha/14.svg"
     },
@@ -26,7 +26,7 @@
         "instruccion": "Toma una bolita y presiónala con el dedo índice y el pulgar hasta aplanarla bien.",
         "bdere1": "/barraderecha/11.svg",
         "bdere2": "/barraderecha/12.svg",
-        "bdere3": "/barraderecha/13.svg",
+        "bdere3": "/barraderecha/13si.svg",
         "bdere4": "/barraderecha/14.svg"
     },
     {
@@ -37,14 +37,14 @@
         "bdere1": "/barraderecha/11.svg",
         "bdere2": "/barraderecha/12.svg",
         "bdere3": "/barraderecha/13.svg",
-        "bdere4": "/barraderecha/14.svg"
+        "bdere4": "/barraderecha/14si.svg"
     },
     {
         "id": "recortado2-1",
         "titulo": "/titulos/21t.svg",
         "video": "/videos/21v.webm",
         "instruccion": "Recorta siguiendo la línea desde abajo hacia arriba.",
-        "bdere1": "/barraderecha/21 si.svg",
+        "bdere1": "/barraderecha/21si.svg",
         "bdere2": "/barraderecha/22.svg",
         "bdere3": "/barraderecha/23.svg",
         "bdere4": "/barraderecha/24.svg"
@@ -92,7 +92,7 @@
     {
         "id": "plegado3-2",
         "titulo": "/titulos/32t.svg",
-        "video": "/videos/32v.mp4",
+        "video": "/videos/32v.webm",
         "instruccion": "Dobla la hoja de un extremo al otro, uniendo los lados largos, y marca el doblez con firmeza.",
         "bdere1": "/barraderecha/31.svg",
         "bdere2": "/barraderecha/32si.svg",
@@ -123,7 +123,7 @@
         "id": "coloreado4-1",
         "titulo": "/titulos/41t.svg",
         "video": "/videos/41v.webm",
-        "instruccion": "Dobla la hoja de un lado hacia el otro hasta unir los bordes y marca el doblez presionando con los dedos",
+        "instruccion": "Sigue el camino del crayón alrededor del círculo hasta completarlo.<br><br>Después colorea por dentro.",
         "bdere1": "/barraderecha/41si.svg",
         "bdere2": "/barraderecha/42.svg",
         "bdere3": "/barraderecha/43.svg",
@@ -133,7 +133,7 @@
         "id": "coloreado4-2",
         "titulo": "/titulos/42t.svg",
         "video": "/videos/42v.webm",
-        "instruccion": "Dobla la hoja de un lado hacia el otro hasta unir los bordes y marca el doblez presionando con los dedos",
+        "instruccion": "Recorre con tu crayón los cuatro lados del cuadrado.<br><br>Después colorea por dentro.",
         "bdere1": "/barraderecha/41.svg",
         "bdere2": "/barraderecha/42si.svg",
         "bdere3": "/barraderecha/43.svg",
@@ -142,8 +142,8 @@
     {
         "id": "coloreado4-3",
         "titulo": "/titulos/43t.svg",
-        "video": "/videos/43v.webm",
-        "instruccion": "Dobla la hoja de un lado hacia el otro hasta unir los bordes y marca el doblez presionando con los dedos",
+        "video": "/videos/43v.webm", 
+        "instruccion": "Sigue el borde del triángulo con tu crayón hasta cerrarlo.<br><br>Después colorea por dentro.",
         "bdere1": "/barraderecha/41.svg",
         "bdere2": "/barraderecha/42.svg",
         "bdere3": "/barraderecha/43si.svg",
@@ -153,7 +153,7 @@
         "id": "coloreado4-4",
         "titulo": "/titulos/44t.svg",
         "video": "/videos/44v.webm",
-        "instruccion": "Dobla la hoja de un lado hacia el otro hasta unir los bordes y marca el doblez presionando con los dedos",
+        "instruccion": "Colorea el espacio siguiendo una misma dirección con tu crayón, manteniendo el trazo y sin salirte del área.",
         "bdere1": "/barraderecha/41.svg",
         "bdere2": "/barraderecha/42.svg",
         "bdere3": "/barraderecha/43.svg",
