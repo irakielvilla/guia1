@@ -1,0 +1,90 @@
+---
+
+---
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body>
+		<slot>
+
+        </slot>
+	</body>
+</html>
+
+
+<style is:global>
+  /* --- FUENTE COINY --- */
+  @font-face {
+    font-family: 'Coiny';
+    src: url('/fonts/Coiny-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  /* --- FUENTE FREDOKA --- */
+  /* Registramos el peso Light */
+  @font-face {
+    font-family: 'Fredoka';
+    src: url('/fonts/Fredoka-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  /* Registramos el peso Regular */
+  @font-face {
+    font-family: 'Fredoka';
+    src: url('/fonts/Fredoka-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  /* Registramos el peso SemiBold */
+  @font-face {
+    font-family: 'Fredoka';
+    src: url('/fonts/Fredoka-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+
+
+  /* 1. Reset básico para asegurar que las medidas son exactas y no hay márgenes molestos */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+/* 2. El body: Maneja el FONDO GENERAL y el CENTRADO */
+  body {
+    /* --- CONFIGURACIÓN DE LA IMAGEN DE FONDO --- */
+    background-image: url('/public/bg/fondorojo.svg'); 
+    /* Asegura que la imagen cubra toda la pantalla sin repetirse y esté centrada */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Evita que el fondo se mueva si hay scroll */
+    background-attachment: fixed; 
+
+    /* --- CONFIGURACIÓN DEL CENTRADO DEL CONTENEDOR --- */
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center;     /* Centrado vertical */
+    min-height: 100vh;       /* Asegura que el body ocupe todo el alto de la pantalla del navegador */
+    
+    /* --- COMPORTAMIENTO DE SCROLL --- */
+    /* Si la ventana del navegador es más pequeña que 1400x650px, aparecerán barras de scroll */
+    overflow: hidden;
+  }
+
+  
+
+</style>

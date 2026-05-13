@@ -2,17 +2,24 @@
 import Barramodelado from './svgs/Barramodelado.astro';
 import Barracoloreado from './svgs/Barracoloreado.astro';
 import Barraplegado from './svgs/Barraplegado.astro';
-import Barrarecortado from './svgs/Barrarecortado.astro'; // Si es diferente, si no, reutiliza uno de los anteriores
+import Barrarecortado from './svgs/Barrarecortado.astro';
+import Barratrazos from './svgs/Barratrazos.astro';
+import Barravocales from './svgs/Barravocales.astro';
+import Barranumeros from './svgs/Barranumeros.astro';
+// Si es diferente, si no, reutiliza uno de los anteriores
 // Importa los demás según los crees
 
 const { section } = Astro.props;
 
-// Mapeo dinámico
+//Mapeo dinámico
 const COMPONENTS = {
   modelado: Barramodelado, 
   coloreado: Barracoloreado,
     plegado: Barraplegado, 
     recortado: Barrarecortado, // Ajustar según corresponda
+    trazos: Barratrazos,
+    vocales: Barravocales,
+    numeros: Barranumeros
 };
 
 const SelectedBarra = COMPONENTS[section] || Barramodelado;
