@@ -12,7 +12,7 @@ import Pizarragrafo from "../../../components/Pizarragrafo.astro";
 import PaginaMaestrapuntoc from "../../layouts/PaginaMaestrapuntoc.astro";
 
 // Buscamos el ejercicio que coincida con esta página
-const miejercicio = tablavideos.find((item) => item.id === "trazos1-1");
+const miejercicio = tablavideos.find((item) => item.id === "numeros3-3");
 
 // Recibimos los datos como parámetros
 const { video, instruccion, titulo, bdere1, bdere2, bdere3, bdere4 } =
@@ -22,7 +22,7 @@ const { video, instruccion, titulo, bdere1, bdere2, bdere3, bdere4 } =
 <PaginaMaestrapuntoc>
     <div id="ContenedorPrin">
         <!--inicio chorrera de codigo -->
-        <Barraizquierda section="trazos" />
+        <Barraizquierda section="numeros" />
         <!--fin chorrera de codigo -->
 
 
@@ -33,19 +33,23 @@ const { video, instruccion, titulo, bdere1, bdere2, bdere3, bdere4 } =
         </div>
 
         <div id="bbarraderecha">
-            <a href="/c-grafomotriz/trazos/trazos1-1/"><img class="ejers" src={miejercicio.bdere1} alt="" />
+            <a href="/c-grafomotriz/numeros/numeros3-0/"><img class="ejers" src={miejercicio.bdere1} alt="" />
                     </a>
 
-            <a href="/c-grafomotriz/trazos/trazos1-2/"
+            <a href="/c-grafomotriz/numeros/numeros3-1/"
                 ><img class="ejers" src={miejercicio.bdere2} alt="" />
             </a>
 
-            <a href="/c-grafomotriz/trazos/trazos1-3/"
+            <a href="/c-grafomotriz/numeros/numeros3-2/"
                 ><img class="ejers" src={miejercicio.bdere3} alt="" />
             </a>
 
-            <a href="/c-grafomotriz/trazos/trazos1-4/"
+            <a href="/c-grafomotriz/numeros/numeros3-3/"
                 ><img class="ejers" src={miejercicio.bdere4} alt="" />
+            </a>
+
+            <a href="/c-grafomotriz/numeros/numeros3-4/"
+                ><img class="ejers" src={miejercicio.bdere5} alt="" />
             </a>
         </div>
     </div>
