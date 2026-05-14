@@ -12,17 +12,17 @@ import Pizarragrafo from "../../../components/Pizarragrafo.astro";
 import PaginaMaestrapuntoc from "../../layouts/PaginaMaestrapuntoc.astro";
 
 // Buscamos el ejercicio que coincida con esta página
-const miejercicio = tablavideos.find((item) => item.id === "numeros3-0");
+const miejercicio = tablavideos.find((item) => item.id === "vocales2-2");
 
 // Recibimos los datos como parámetros
-const { video, instruccion, titulo, bdere1, bdere2, bdere3, bdere4 } =
+const { video, instruccion, titulo, bdere1, bdere2, bdere3, bdere4, bdere5 } =
     Astro.props;
 ---
 
 <PaginaMaestrapuntoc>
     <div id="ContenedorPrin">
         <!--inicio chorrera de codigo -->
-        <Barraizquierda section="numeros" />
+        <Barraizquierda section="vocales" />
         <!--fin chorrera de codigo -->
 
 
@@ -33,22 +33,23 @@ const { video, instruccion, titulo, bdere1, bdere2, bdere3, bdere4 } =
         </div>
 
         <div id="bbarraderecha">
-            <a href="/c-grafomotriz/numeros/numeros3-0/"><img class="ejers" src={miejercicio.bdere1} alt="" />
+            <a href="/c-grafomotriz/vocales/vocales2-1/">
+                <img class="ejers" src={miejercicio.bdere1} alt="" />
                     </a>
 
-            <a href="/c-grafomotriz/numeros/numeros3-1/"
+            <a href="/c-grafomotriz/vocales/vocales2-2/"
                 ><img class="ejers" src={miejercicio.bdere2} alt="" />
             </a>
 
-            <a href="/c-grafomotriz/numeros/numeros3-2/"
+            <a href="/c-grafomotriz/vocales/vocales2-3/"
                 ><img class="ejers" src={miejercicio.bdere3} alt="" />
             </a>
 
-            <a href="/c-grafomotriz/numeros/numeros3-3/"
+            <a href="/c-grafomotriz/vocales/vocales2-4/"
                 ><img class="ejers" src={miejercicio.bdere4} alt="" />
             </a>
 
-            <a href="/c-grafomotriz/numeros/numeros3-4/"
+            <a href="/c-grafomotriz/vocales/vocales2-5/"
                 ><img class="ejers" src={miejercicio.bdere5} alt="" />
             </a>
         </div>
@@ -96,6 +97,7 @@ const { video, instruccion, titulo, bdere1, bdere2, bdere3, bdere4 } =
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
+            row-gap: 11.8%;
             grid-column: 27/30;
             grid-row: 6/15;
             object-fit: none;
@@ -103,11 +105,15 @@ const { video, instruccion, titulo, bdere1, bdere2, bdere3, bdere4 } =
             margin-right: 27%;
         }
 
+        .ejerdiv {
+            max-width: 100%;
+            max-height: 10%;
+        }
+
         .ejers {
             width: 100%;
-            height: 62%;
-            transition: transform 0.3s ease; /* Agrega una transición suave para el efecto de zoom */
-            
+            height: 95%;
+            overflow: hidden;
         }
 
         .ejers:hover {

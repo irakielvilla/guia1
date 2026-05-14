@@ -163,7 +163,7 @@
         "id": "trazos1-1",
         "titulo": "/titulos/11tt.svg",
         "video": "/videos/11vt.webm",
-        "instruccion": "Colorea el espacio siguiendo una misma dirección con tu crayón, manteniendo el trazo y sin salirte del área.",
+        "instruccion": "Sigue el trazo de las líneas rectas en dirección vertical y horizontal.",
         "bdere1": "/barraderecha/11si.svg",
         "bdere2": "/barraderecha/12t.svg",
         "bdere3": "/barraderecha/13t.svg",
@@ -173,7 +173,7 @@
         "id": "trazos1-2",
         "titulo": "/titulos/12tt.svg",
         "video": "/videos/12vt.webm",
-        "instruccion": "Colorea el espacio siguiendo una misma dirección con tu crayón, manteniendo el trazo y sin salirte del área.",
+        "instruccion": "Sigue el trazo de las líneas rectas en dirección diagonal.",
         "bdere1": "/barraderecha/11t.svg",
         "bdere2": "/barraderecha/12si.svg",
         "bdere3": "/barraderecha/13t.svg",
@@ -183,7 +183,7 @@
         "id": "trazos1-3",
         "titulo": "/titulos/13tt.svg",
         "video": "/videos/13vt.webm",
-        "instruccion": "Colorea el espacio siguiendo una misma dirección con tu crayón, manteniendo el trazo y sin salirte del área.",
+        "instruccion": "Sigue la línea curva repitiendo el trazo que observas.",
         "bdere1": "/barraderecha/11t.svg",
         "bdere2": "/barraderecha/12t.svg",
         "bdere3": "/barraderecha/13si.svg",
@@ -193,7 +193,7 @@
         "id": "trazos1-4",
         "titulo": "/titulos/14tt.svg",
         "video": "/videos/14vt.webm",
-        "instruccion": "Colorea el espacio siguiendo una misma dirección con tu crayón, manteniendo el trazo y sin salirte del área.",
+        "instruccion": "Sigue la línea en zigzag, subiendo y bajando, repitiendo el trazo que observas.",
         "bdere1": "/barraderecha/11t.svg",
         "bdere2": "/barraderecha/12t.svg",
         "bdere3": "/barraderecha/13t.svg",
@@ -203,53 +203,56 @@
         "id": "vocales2-1",
         "titulo": "/titulos/21tv.svg",
         "video": "/videos/21vv.webm",
-        "instruccion": "Colorea el espacio siguiendo una misma dirección con tu crayón, manteniendo el trazo y sin salirte del área.",
+        "instruccion": "Sigue el recorridodel lápiz junto a las flechas para formar la vocal a grande y pequeña.",
         "bdere1": "/barraderecha/21si.svg",
-        "bdere2": "/barraderecha/22v.svg",
-        "bdere3": "/barraderecha/23v.svg",
-        "bdere4": "/barraderecha/24v.svg"
+        "bdere2": "/barraderecha/22t.svg",
+        "bdere3": "/barraderecha/23t.svg",
+        "bdere4": "/barraderecha/24t.svg",
+        "bdere5": "/barraderecha/25t.svg"
     },
     {
         "id": "vocales2-2",
         "titulo": "/titulos/22tv.svg",
         "video": "/videos/22vv.webm",
-        "instruccion": "Colorea el espacio siguiendo una misma dirección con tu crayón, manteniendo el trazo y sin salirte del área.",
-        "bdere1": "/barraderecha/21v.svg",
+        "instruccion": "Sigue el recorrido del lápiz junto a las flechas para formar la vocal e grande y pequeña.",
+        "bdere1": "/barraderecha/21t.svg",
         "bdere2": "/barraderecha/22si.svg",
-        "bdere3": "/barraderecha/23v.svg",
-        "bdere4": "/barraderecha/24v.svg"
+        "bdere3": "/barraderecha/23t.svg",
+        "bdere4": "/barraderecha/24t.svg",
+        "bdere5": "/barraderecha/25t.svg"
     },
     {
         "id": "vocales2-3",
         "titulo": "/titulos/23tv.svg",
         "video": "/videos/23vv.webm",
-        "instruccion": "Colorea el espacio siguiendo una misma dirección con tu crayón, manteniendo el trazo y sin salirte del área.",
-        "bdere1": "/barraderecha/21v.svg",
-        "bdere2": "/barraderecha/22v.svg",
+        "instruccion": "Sigue el recorrido del lápiz junto a las flechas para formar la vocal i grande y pequeña.",
+        "bdere1": "/barraderecha/21t.svg",
+        "bdere2": "/barraderecha/22t.svg",
         "bdere3": "/barraderecha/23si.svg",
-        "bdere4": "/barraderecha/24v.svg"
+        "bdere4": "/barraderecha/24t.svg",  
+        "bdere5": "/barraderecha/25t.svg"
     },
     {
         "id": "vocales2-4",
         "titulo": "/titulos/24tv.svg",
         "video": "/videos/24vv.webm",
-        "instruccion": "Colorea el espacio siguiendo una misma dirección con tu crayón, manteniendo el trazo y sin salirte del área.",
-        "bdere1": "/barraderecha/21v.svg",
-        "bdere2": "/barraderecha/22v.svg",
-        "bdere3": "/barraderecha/23v.svg",
+        "instruccion": "Sigue el recorrido del lápiz junto a las flechas para formar la vocal o grande y pequeña.",
+        "bdere1": "/barraderecha/21t.svg",
+        "bdere2": "/barraderecha/22t.svg",
+        "bdere3": "/barraderecha/23t.svg",
         "bdere4": "/barraderecha/24si.svg",
-        "bedere5": "/barraderecha/25v.svg"
+        "bdere5": "/barraderecha/25t.svg"
     },
     {
         "id": "vocales2-5",
         "titulo": "/titulos/25tv.svg",
         "video": "/videos/25vv.webm",
-        "instruccion": "Colorea el espacio siguiendo una misma dirección con tu crayón, manteniendo el trazo y sin salirte del área.",
-        "bdere1": "/barraderecha/21v.svg",
-        "bdere2": "/barraderecha/22v.svg",
-        "bdere3": "/barraderecha/23v.svg",
-        "bdere4": "/barraderecha/24v.svg",
-        "bedere5": "/barraderecha/25si.svg"
+        "instruccion": "Sigue el recorrido del lápiz junto a las flechas para formar la vocal u grande y pequeña.",
+        "bdere1": "/barraderecha/21t.svg",
+        "bdere2": "/barraderecha/22t.svg",
+        "bdere3": "/barraderecha/23t.svg",
+        "bdere4": "/barraderecha/24t.svg",
+        "bdere5": "/barraderecha/25si.svg"
     },
     {
         "id": "numeros3-0",
@@ -260,7 +263,7 @@
         "bdere2": "/barraderecha/1n.svg",
         "bdere3": "/barraderecha/2n.svg",
         "bdere4": "/barraderecha/3n.svg",
-        "bedere5": "/barraderecha/4n.svg"
+        "bdere5": "/barraderecha/4n.svg"
     },
     {
         "id": "numeros3-1",
@@ -271,7 +274,7 @@
         "bdere2": "/barraderecha/1sin.svg",
         "bdere3": "/barraderecha/2n.svg",
         "bdere4": "/barraderecha/3n.svg",
-        "bedere5": "/barraderecha/4n.svg"
+        "bdere5": "/barraderecha/4n.svg"
     },
     {
         "id": "numeros3-2",
@@ -282,7 +285,7 @@
         "bdere2": "/barraderecha/1n.svg",
         "bdere3": "/barraderecha/2n.svg",
         "bdere4": "/barraderecha/3sin.svg",
-        "bedere5": "/barraderecha/4n.svg"
+        "bdere5": "/barraderecha/4n.svg"
     },
     {
         "id": "numeros3-3",
@@ -293,7 +296,7 @@
         "bdere2": "/barraderecha/1n.svg",
         "bdere3": "/barraderecha/2n.svg",
         "bdere4": "/barraderecha/3n.svg",
-        "bedere5": "/barraderecha/4sin.svg"
+        "bdere5": "/barraderecha/4sin.svg"
     },
     {
         "id": "numeros3-4",
@@ -304,7 +307,7 @@
         "bdere2": "/barraderecha/1n.svg",
         "bdere3": "/barraderecha/2n.svg",
         "bdere4": "/barraderecha/3n.svg",
-        "bedere5": "/barraderecha/4sin.svg"
+        "bdere5": "/barraderecha/4sin.svg"
     },
     {
         "id": "numeros3-5",
@@ -315,7 +318,7 @@
         "bdere2": "/barraderecha/6n.svg",
         "bdere3": "/barraderecha/7n.svg",
         "bdere4": "/barraderecha/8n.svg",
-        "bedere5": "/barraderecha/9n.svg"
+        "bdere5": "/barraderecha/9n.svg"
     },
     {
         "id": "numeros3-6",
@@ -326,7 +329,7 @@
         "bdere2": "/barraderecha/6sin.svg",
         "bdere3": "/barraderecha/7n.svg",
         "bdere4": "/barraderecha/8n.svg",
-        "bedere5": "/barraderecha/9n.svg"
+        "bdere5": "/barraderecha/9n.svg"
     },
     {
         "id": "numeros3-7",
@@ -337,7 +340,7 @@
         "bdere2": "/barraderecha/6n.svg",
         "bdere3": "/barraderecha/7sin.svg",
         "bdere4": "/barraderecha/8n.svg",
-        "bedere5": "/barraderecha/9n.svg"
+        "bdere5": "/barraderecha/9n.svg"
     },
     {
         "id": "numeros3-8",
@@ -348,7 +351,7 @@
         "bdere2": "/barraderecha/6n.svg",
         "bdere3": "/barraderecha/7n.svg",
         "bdere4": "/barraderecha/8sin.svg",
-        "bedere5": "/barraderecha/9n.svg"
+        "bdere5": "/barraderecha/9n.svg"
     },
     {
         "id": "numeros3-9",
@@ -359,7 +362,7 @@
         "bdere2": "/barraderecha/6n.svg",
         "bdere3": "/barraderecha/7n.svg",
         "bdere4": "/barraderecha/8n.svg",
-        "bedere5": "/barraderecha/9sin.svg"
+        "bdere5": "/barraderecha/9sin.svg"
     }
     
     
