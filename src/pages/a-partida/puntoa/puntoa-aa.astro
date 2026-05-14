@@ -6,52 +6,27 @@ import PaginaMaestra1 from "../../layouts/PaginaMaestra1.astro";
 // Importamos el nuevo componente
 import Barraizquierda from "../../../components/barraizquierda.astro";
 // Importamos el JSON (como en tu foto)
-import tablavideos from "../../../../tablavideos.json";
+import tablatutorial from "../../../../tablatutorial.json";
 import PaginaMaestrapuntoa from "../../layouts/PaginaMaestrapuntoa.astro";
-import Pizarragrafo from "../../../components/Pizarragrafo.astro";
-import PaginaMaestrapuntoc from "../../layouts/PaginaMaestrapuntoc.astro";
+import Pizarratutorial from "../../../components/Pizarratutorial.astro";
 
 // Buscamos el ejercicio que coincida con esta página
-const miejercicio = tablavideos.find((item) => item.id === "numeros3-1");
+const miejercicio = tablatutorial.find((item) => item.id === "puntoa-a");
 
 // Recibimos los datos como parámetros
 const { video, instruccion, titulo, bdere1, bdere2, bdere3, bdere4 } =
     Astro.props;
 ---
 
-<PaginaMaestrapuntoc>
+<PaginaMaestrapuntoa>
     <div id="ContenedorPrin">
         <!--inicio chorrera de codigo -->
-        <Barraizquierda section="numeros" />
+        <Barraizquierda section="modelado" />
         <!--fin chorrera de codigo -->
 
 
-        <Pizarragrafo miejercicio={miejercicio} />
+        <Pizarratutorial miejercicio={miejercicio} />
 
-        <div id="barraderecha">
-            <img class="barradere" src="/barraderecha.svg" alt="" />
-        </div>
-
-        <div id="bbarraderecha">
-            <a href="/c-grafomotriz/numeros/numeros3-0/"><img class="ejers" src={miejercicio.bdere1} alt="" />
-                    </a>
-
-            <a href="/c-grafomotriz/numeros/numeros3-1/"
-                ><img class="ejers" src={miejercicio.bdere2} alt="" />
-            </a>
-
-            <a href="/c-grafomotriz/numeros/numeros3-2/"
-                ><img class="ejers" src={miejercicio.bdere3} alt="" />
-            </a>
-
-            <a href="/c-grafomotriz/numeros/numeros3-3/"
-                ><img class="ejers" src={miejercicio.bdere4} alt="" />
-            </a>
-
-            <a href="/c-grafomotriz/numeros/numeros3-4/"
-                ><img class="ejers" src={miejercicio.bdere5} alt="" />
-            </a>
-        </div>
     </div>
 
     <style>
@@ -96,6 +71,7 @@ const { video, instruccion, titulo, bdere1, bdere2, bdere3, bdere4 } =
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
+            row-gap: 11.8%;
             grid-column: 27/30;
             grid-row: 6/15;
             object-fit: none;
@@ -110,7 +86,7 @@ const { video, instruccion, titulo, bdere1, bdere2, bdere3, bdere4 } =
 
         .ejers {
             width: 100%;
-            height: 62%;
+            height: 95%;
             overflow: hidden;
         }
 
@@ -147,4 +123,4 @@ const { video, instruccion, titulo, bdere1, bdere2, bdere3, bdere4 } =
             color: blue;
         }
     </style>
-</PaginaMaestrapuntoc>
+</PaginaMaestrapuntoa>

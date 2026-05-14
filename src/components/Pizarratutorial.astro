@@ -1,0 +1,226 @@
+---
+// Pizarratutorial.astro
+import Swiper from "swiper";
+import "swiper/css";
+
+// Recibimos ÚNICAMENTE miejercicio, que es el objeto que viene del JSON
+const { miejercicio } = Astro.props;
+
+// BLINDAJE: Si miejercicio no existe, creamos un objeto vacío con strings 
+// para que el build no falle al intentar leer propiedades.
+const data = miejercicio || { 
+  titulo: '', 
+  pag1: '', 
+  pag2: '', 
+  pag3: '', 
+  pag4: '' 
+};
+---
+
+<div id="pizarrabase">
+  <img class="esquinas" src="/esquinas.svg" alt="" />
+</div>
+
+<div id="Pestanatitulo">
+  {data.titulo && <img src={data.titulo} alt="Título del Ejercicio" />}
+</div>
+
+<div id="contenedor-pizarra">
+  
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      {data.pag1 && (
+        <div class="swiper-slide">
+          <div class="texto-pizarra">
+            <p set:html={data.pag1}></p>
+          </div>
+        </div>
+      )}
+      {data.pag2 && (
+        <div class="swiper-slide">
+          <div class="texto-pizarra">
+            <p set:html={data.pag2}></p>
+          </div>
+        </div>
+      )}
+      {data.pag3 && (
+        <div class="swiper-slide">
+          <div class="texto-pizarra">
+            <p set:html={data.pag3}></p>
+          </div>
+        </div>
+      )}
+      {data.pag4 && (
+        <div class="swiper-slide">
+          <div class="texto-pizarra">
+            <p set:html={data.pag4}></p>
+          </div>
+        </div>
+      )}
+    </div>
+  </div>
+
+  <div id="capsulas-navegacion">
+    {data.pag1 && <button class="capsula active" data-index="0">1</button>}
+    {data.pag2 && <button class="capsula" data-index="1">2</button>}
+    {data.pag3 && <button class="capsula" data-index="2">3</button>}
+    {data.pag4 && <button class="capsula" data-index="3">4</button>}
+  </div>
+
+  <div id="flechas-pasos">
+    <button id="btn-paso-arriba" class="pildora-paso">
+      <img src="/flecha-arriba.svg" alt="Anterior" />
+    </button>
+    <button id="btn-paso-abajo" class="pildora-paso">
+      <img src="/flecha-abajo.svg" alt="Siguiente" />
+    </button>
+  </div>
+
+</div>
+
+<style>
+  /* Retícula de 30x14 - Módulos de 41.12px */
+  #contenedor-pizarra {
+    display: grid;
+    grid-template-columns: repeat(30, 41.12px);
+    grid-template-rows: repeat(14, 41.12px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    pointer-events: none; /* Dejamos pasar clicks a los botones */
+  }
+
+  #contenedor-pizarra > * {
+    pointer-events: auto; /* Activamos clicks solo para los hijos */
+  }
+
+  /* Área Azul de Información */
+  .mySwiper {
+    grid-column: 4 / 27; 
+    grid-row: 4 / 10;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #148adb;
+    border-radius: 20px;
+  }
+
+  .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 30px;
+  }
+
+  .texto-pizarra {
+    color: white;
+    font-family: "Fredoka", sans-serif;
+    font-size: 1.8rem;
+    text-align: left;
+    white-space: pre-line;
+  }
+
+  /* Estilo de las Cápsulas Amarillas */
+  #capsulas-navegacion {
+    grid-column: 4 / 27;
+    grid-row: 11 / 12;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .capsula {
+    background-color: #fcdf50;
+    border: 4px solid #148adb;
+    border-radius: 50px;
+    padding: 5px 25px;
+    font-family: "Coiny", cursive;
+    color: #148adb;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .capsula.active {
+    background-color: #ffffff;
+    transform: scale(1.1);
+  }
+
+  /* Flechas Laterales (Píldoras) */
+  #flechas-pasos {
+    grid-column: 28 / 29;
+    grid-row: 5 / 9;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .pildora-paso {
+    background-color: #fcdf50;
+    border: 3px solid #148adb;
+    border-radius: 15px;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  /* Base de la Pizarra */
+  #pizarrabase {
+    position: absolute;
+    width: 1233.6px;
+    height: 575.68px;
+    background: #fdfbf7;
+    border: 8px solid #148adb;
+    border-radius: 40px;
+    z-index: 1;
+  }
+
+  #Pestanatitulo {
+    position: absolute;
+    grid-column: 17/27;
+    grid-row: 2/4;
+    z-index: 10;
+  }
+
+  .esquinas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+</style>
+
+<script>
+  import Swiper from 'swiper';
+
+  const swiper = new Swiper(".mySwiper", {
+    speed: 400,
+    allowTouchMove: false,
+  });
+
+  // Manejo de Cápsulas
+  const capsulas = document.querySelectorAll('.capsula');
+  capsulas.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const index = parseInt(btn.getAttribute('data-index'));
+      swiper.slideTo(index);
+      
+      capsulas.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+
+  // Navegación de Pasos (Botones Derecha)
+  const btnArriba = document.getElementById('btn-paso-arriba');
+  const btnAbajo = document.getElementById('btn-paso-abajo');
+
+  // Aquí puedes programar el salto a los IDs de la barra izquierda
+  btnArriba.onclick = () => {
+     // Lógica para ir al paso anterior
+  };
+
+  btnAbajo.onclick = () => {
+     // Lógica para ir al siguiente paso
+  };
+</script>

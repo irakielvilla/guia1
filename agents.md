@@ -62,7 +62,17 @@ Estructura de Contenido (Secciones):
 
 Gestión de Datos:
 
-- `tablavideos.json`: Contiene el ID, ruta del video, título (SVG) e instrucciones de cada ejercicio.
+- `tablavideos.json`: Contiene objetos de ejercicio con campos: id, ruta, titulo, instrucciones. Ejemplo:
+
+```
+{
+  "id": "modelado1-1",
+  "ruta": "/videos/modelado1-1.webm",
+  "titulo": "Modelado 1-1",
+  "instrucciones": "<p>Instrucciones HTML</p>"
+}
+```
+
 - Las páginas de ejercicios buscan su respectivo objeto mediante el ID (ej. `tablavideos.find(i => i.id === 'modelado1-1')`).
 
 Reglas de Renderizado:
@@ -87,7 +97,7 @@ Contenido Implementado:
   - Modelado 1: 4 actividades (modelado1-1 a modelado1-4)
   - Plegado 3: 4 actividades (plegado3-1 a plegado3-4)
   - Recortado 2: 4 actividades (recortado2-1 a recortado2-4)
-  - Coloreado 4: Estructura preparada (pendiente de implementación)
+  - Coloreado: 4 actividades — estructura implementada; contenido pendiente de completar.
 - Sección C (Pregraficos): 
   - Trazos: 1 actividad implementada (trazos1.astro)
   - Números y Vocales: Estructuras preparadas (pendientes de implementación)
