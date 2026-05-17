@@ -8,8 +8,7 @@ import Barraizquierda from "../../../components/barraizquierda.astro";
 // Importamos el JSON (como en tu foto)
 import tablatutorial from "../../../../tablatutorial.json";
 import PaginaMaestrapuntoa from "../../layouts/PaginaMaestrapuntoa.astro";
-import Pizarratutorial from "../../../components/Pizarratutorial.astro";
-import Pizarratutorial1 from "../../../components/Pizarratutorial1.astro";
+import Pizarratutorial3 from "../../../components/Pizarratutorial3.astro";
 
 // Buscamos el ejercicio que coincida con esta página
 const miejercicio = tablatutorial.find((item) => item.id === "paso2");
@@ -26,7 +25,7 @@ const { video, instruccion, titulo, bdere1, bdere2, bdere3, bdere4 } =
         <!--fin chorrera de codigo -->
 
 
-        <Pizarratutorial1 miejercicio={miejercicio} />
+        <Pizarratutorial3 miejercicio={miejercicio} />
 
     </div>
 

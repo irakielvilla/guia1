@@ -3,29 +3,31 @@
         "id": "puntoa-a",
         "pag1": "Las actividades presentadas forman parte de una serie de tres guías, pensadas para acompañar al niño en un proceso de aprendizaje progresivo durante sus primeras experiencias con los trazos y la escritura. <br> Esta corresponde a la Guía N.º 1, en la que se comienzan a fortalecer las bases necesarias para el desarrollo de la motricidad fina y la organización del espacio gráfico.",
         "pag2": "A través de las actividades propuestas se busca:\n\nReforzar en casa las actividades y aprendizajes trabajados en el aula de clases.\n\nFomentar hábitos de trabajo ordenado, limpio y con procedimientos paso a paso.",
-        "pag3": "Desarrollar la motricidad fina y la coordinación visomotora, necesarias para una escritura segura.\n\nTrabajar la lateralidad y las nociones espaciales (arriba–abajo, izquierda–derecha).\n\nGuiar al niño en el uso adecuado del espacio de la hoja y en la direccionalidad correcta de los trazos.",
-        "titulo": "/titulos/propo-gene.svg"
+        "pag3": "Desarrollar  la motricidad fina y la coordinación visomotora, necesarias para una escritura segura.\n\nTrabajar la lateralidad y las nociones espaciales (arriba–abajo, izquierda–derecha).\n\nGuiar al niño en el uso adecuado del espacio de la hoja y en la direccionalidad correcta de los trazos.",
+        "pag4":"Promover la autonomía, la concentración y la comprensión de cada actividad. Estas orientaciones buscan que el proceso de aprendizaje sea agradable, significativo y motivador, permitiendo que el niño se sienta acompañado, seguro y orgulloso de cada uno de sus avances.",
+        "titulo": "/puntoa/tpg.svg"
     },
     {
         "id": "paso1",
-        "pag1": "Las actividades presentadas forman parte de una serie de tres guías, pensadas para acompañar al niño en un proceso de aprendizaje progresivo durante sus primeras experiencias con los trazos y la escritura. <br> Esta corresponde a la Guía N.º 1, en la que se comienzan a fortalecer las bases necesarias para el desarrollo de la motricidad fina y la organización del espacio gráfico.",
-        "pag2": "A través de las actividades propuestas se busca:\n\nReforzar en casa las actividades y aprendizajes trabajados en el aula de clases.\n\nFomentar hábitos de trabajo ordenado, limpio y con procedimientos paso a paso.",
-        "pag3": "Desarrollar la motricidad fina y la coordinación visomotora, necesarias para una escritura segura.\n\nTrabajar la lateralidad y las nociones espaciales (arriba–abajo, izquierda–derecha).\n\nGuiar al niño en el uso adecuado del espacio de la hoja y en la direccionalidad correcta de los trazos.",
-        "titulo": "/titulos/propo-gene.svg"
+        "pag1": "Es importante crear un ambiente tranquilo,bien iluminado y libre de distracciones.El espacio debe invitar al niño a concentrarse y disfrutar.Se recomienda tener a la mano los materiales necesarios: lápiz, colores, borrador, sacapuntas, cuaderno y la guía correspondiente al nivel.",
+        "imgpag1":"/puntoa/paso1img1.svg",
+        "titulo": "/puntoa/t1.svg"
     },
     {
         "id": "paso2",
-        "pag1": "Las actividades presentadas forman parte de una serie de tres guías, pensadas para acompañar al niño en un proceso de aprendizaje progresivo durante sus primeras experiencias con los trazos y la escritura. <br> Esta corresponde a la Guía N.º 1, en la que se comienzan a fortalecer las bases necesarias para el desarrollo de la motricidad fina y la organización del espacio gráfico.",
-        "pag2": "A través de las actividades propuestas se busca:\n\nReforzar en casa las actividades y aprendizajes trabajados en el aula de clases.\n\nFomentar hábitos de trabajo ordenado, limpio y con procedimientos paso a paso.",
-        "pag3": "Desarrollar la motricidad fina y la coordinación visomotora, necesarias para una escritura segura.\n\nTrabajar la lateralidad y las nociones espaciales (arriba–abajo, izquierda–derecha).\n\nGuiar al niño en el uso adecuado del espacio de la hoja y en la direccionalidad correcta de los trazos.",
-        "titulo": "/titulos/propo-gene.svg"
+        "pag1": "Cada trazo debe realizarse de manera firme, continua y fluida. Es importante que el niño observe claramente dónde comienza y dónde termina el trazo.El acompañamiento constante, paciente y positivo refuerza la confianza del niño y promueve el gusto por aprender por si mismo.",
+        "pag2": "Antes de iniciar cada actividad, el adulto puede:Explicar con calma qué debe hacer el niño.Mostrar cómo se realiza el trazo.Guiar suavemente la mano del niño si lo necesita, evitando hacerlo por él.",
+        "titulo": "/puntoa/t2.svg"
     },
     {
         "id": "paso3",
-        "pag1": "Las actividades presentadas forman parte de una serie de tres guías, pensadas para acompañar al niño en un proceso de aprendizaje progresivo durante sus primeras experiencias con los trazos y la escritura. <br> Esta corresponde a la Guía N.º 1, en la que se comienzan a fortalecer las bases necesarias para el desarrollo de la motricidad fina y la organización del espacio gráfico.",
-        "pag2": "A través de las actividades propuestas se busca:\n\nReforzar en casa las actividades y aprendizajes trabajados en el aula de clases.\n\nFomentar hábitos de trabajo ordenado, limpio y con procedimientos paso a paso.",
-        "pag3": "Desarrollar la motricidad fina y la coordinación visomotora, necesarias para una escritura segura.\n\nTrabajar la lateralidad y las nociones espaciales (arriba–abajo, izquierda–derecha).\n\nGuiar al niño en el uso adecuado del espacio de la hoja y en la direccionalidad correcta de los trazos.",
-        "titulo": "/titulos/propo-gene.svg"
+        "pag1": "La postura influye en la comodidad del niño, en la calidad del trazo y en su propia capacidad de concentración.Una buena postura permite que el movimiento del brazo y la mano sea natural, favoreciendo trazos más firmes y fluidos. ",
+        "pag2": "Para ello se recomienda:Sentarse con la espalda recta y apoyada en el respaldo de la silla.Mantener los pies apoyados en el suelo o en un soporte estable.",
+        "pag3": "Apoyar los brazos sobre la mesa, manteniendo los hombros relajados.Inclinar ligeramente la cabeza hacia la hoja, sin acercarse demasiado. ",
+        "imgpag1": "/puntoa/paso3img1.svg",
+        "imgpag2": "/puntoa/paso3img1.svg",
+        "imgpag3": "/puntoa/paso3img1.svg",
+        "titulo": "/puntoa/t3.svg"
     },
     {
         "id": "paso4",
@@ -35,6 +37,8 @@
         "pag4": "La tijera Se toma colocando el pulgar en el orificio superior y el dedo medio o anular en el inferior, mientras el índice ayuda a guiar el movimiento al abrir y cerrar para más precisión.",
         "titulo": "/puntoa/t4.svg",
         "imgpag1": "/puntoa/paso4img1.svg",
-        "imgpag2": "/puntoa/paso4img2.svg"
+        "imgpag2": "/puntoa/paso4img2.svg",
+        "imgpag3": "/puntoa/paso4img3.svg",
+        "imgpag4": "/puntoa/paso4img4.svg"
     }
 ]
