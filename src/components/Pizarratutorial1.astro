@@ -83,20 +83,30 @@ const paginas = pagKeys.map(key => {
 </div>
 
 <style is:global>
+  /* Cápsula Desactivada (Estado por defecto) */
   .mySwiperTutorial .swiper-pagination-bullet {
-    width: 20px !important;
-    height: 9px !important;
-    border-radius: 6px !important;
-    background-color: #E0B812 !important;
-    opacity: 0.5 !important;
+    background-color: transparent !important; /* Eliminamos el círculo gris nativo */
+    background-image: url('/puntoa/capsuladesac.svg') !important; /* Tu SVG inactivo */
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    opacity: 1 !important; /* Forzamos opacidad completa para ver los colores reales del SVG */
+    border-radius: 0px !important; /* Remueve el redondeado CSS ya que el SVG define la forma */
+    
+    /* 🛠️ Modifica estos dos valores según la proporción de tu SVG desactivado */
+    width: 14.5% !important;
+    height: 12.25px !important;  
+    
     transition: all 0.3s ease !important;
-    margin: 0 5px !important;
+    margin: 0 3.7% !important;
   }
 
+  /* Cápsula Activada (Slide donde está interactuando el niño) */
   .mySwiperTutorial .swiper-pagination-bullet-active {
-    width: 42px !important;
-    background-color: #0668A9 !important;
-    opacity: 1 !important;
+    background-image: url('/puntoa/capsulaact.png') !important; /* Tu SVG activo alargado */
+    
+    /* 🛠️ Ajusta el ancho para que coincida con el estiramiento de tu diseño en Illustrator */
+    width: 14.5% !important;
   }
 </style>
 
@@ -170,7 +180,7 @@ const paginas = pagKeys.map(key => {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+
     box-sizing: border-box;
   }
 
@@ -183,10 +193,10 @@ const paginas = pagKeys.map(key => {
 
   #contenedor-swiper-texto {
     grid-row: 6/13;
-    grid-column: 14/22;
+    grid-column: 13/22;
     z-index: 5;
-    padding: 10px;
     box-sizing: border-box;
+    margin-top: 10%;
   }
 
   .swiper {
@@ -197,28 +207,28 @@ const paginas = pagKeys.map(key => {
 
   .swiper-slide {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    padding: 20px 10px 50px 10px;
     box-sizing: border-box;
   }
 
   .fredoka-texto {
     font-family: "Fredoka", sans-serif;
-    font-size: 1.5rem;
-    color: #333333;
+    font-size: 125%;
+    color: #ffffff;
     text-align: left;
     line-height: 1.4;
     margin: 0;
-    width: 100%;
+    font-weight: 300;
   }
 
   .swiper-pagination {
-    position: absolute;
-    bottom: 10px !important;
+    bottom: 16% !important;
     left: 50% !important;
-    transform: translateX(-50%) !important;
+    transform: translateX(-55%) !important;
     z-index: 10;
+    display: flex;
+    justify-content: flex-start;
   }
 
   #navegadorpasos {
@@ -252,6 +262,11 @@ const paginas = pagKeys.map(key => {
     position: absolute;
     z-index: 6;
     width: 77%;
+    transition: calc(0.2s); //Agrega una transición suave para el efecto hover
+  }
+  // Efecto hover para hacer que la flecha crezca un poco al pasar el mouse
+  .arribab:hover {
+    transform: scale(1.1);
   }
 
   .fondobajo {
