@@ -1,226 +1,261 @@
 ---
-// Pizarratutorial.astro
+// import Swiper JS
 import Swiper from "swiper";
+// import Swiper styles
 import "swiper/css";
-
-// Recibimos ÚNICAMENTE miejercicio, que es el objeto que viene del JSON
+// Recibimos los datos como parámetros
+// const { videos } = Astro.props;
+// Recibimos los datos
 const { miejercicio } = Astro.props;
 
-// BLINDAJE: Si miejercicio no existe, creamos un objeto vacío con strings 
-// para que el build no falle al intentar leer propiedades.
-const data = miejercicio || { 
-  titulo: '', 
-  pag1: '', 
-  pag2: '', 
-  pag3: '', 
-  pag4: '' 
-};
+// ESTO ES PARA DEPURAR: Verás el resultado en la terminal de VS Code
+console.log("Datos recibidos en Pizarra:", miejercicio);
+// ESTA ES LA CLAVE: Si miejercicio no existe, creamos uno vacío
+// para que el build no se rompa
+if (!miejercicio) {
+  return Astro.redirect("/");
+  // O simplemente: const miejercicio = { video: '', titulo: '', instruccion: '' };
+}
 ---
 
 <div id="pizarrabase">
-  <img class="esquinas" src="/esquinas.svg" alt="" />
+  <img class="esquinas" src="/esquinasamarillas.png" alt="" />
 </div>
 
 <div id="Pestanatitulo">
-  {data.titulo && <img src={data.titulo} alt="Título del Ejercicio" />}
+  <img src={miejercicio.titulo} alt="" />
 </div>
 
-<div id="contenedor-pizarra">
-  
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      {data.pag1 && (
-        <div class="swiper-slide">
-          <div class="texto-pizarra">
-            <p set:html={data.pag1}></p>
-          </div>
-        </div>
-      )}
-      {data.pag2 && (
-        <div class="swiper-slide">
-          <div class="texto-pizarra">
-            <p set:html={data.pag2}></p>
-          </div>
-        </div>
-      )}
-      {data.pag3 && (
-        <div class="swiper-slide">
-          <div class="texto-pizarra">
-            <p set:html={data.pag3}></p>
-          </div>
-        </div>
-      )}
-      {data.pag4 && (
-        <div class="swiper-slide">
-          <div class="texto-pizarra">
-            <p set:html={data.pag4}></p>
-          </div>
-        </div>
-      )}
-    </div>
+<div id="pizarracomp">
+  <div class="pizarraprincipal">
   </div>
-
-  <div id="capsulas-navegacion">
-    {data.pag1 && <button class="capsula active" data-index="0">1</button>}
-    {data.pag2 && <button class="capsula" data-index="1">2</button>}
-    {data.pag3 && <button class="capsula" data-index="2">3</button>}
-    {data.pag4 && <button class="capsula" data-index="3">4</button>}
+    <div id="bordeazul"></div>
   </div>
+</div>
+<div id="navegadorpasos">
+      <div id="arriba" class="navegador-btn">
+        <img class="arribab" src="/puntoa/arriba.svg" alt="">
+        <img class="fondob" src="/puntoa/fondoarriba.svg" alt="">
+      </div>
+      <div id="abajo" class="navegador-btn"> 
+          <img class="abajob" src="/puntoa/abajo.svg" alt="">
+        <img class="fondobajo" src="/puntoa/fondoabajo.svg" alt="">
+      </div>
+</div>
+<div id="fondoazulinfo">
 
-  <div id="flechas-pasos">
-    <button id="btn-paso-arriba" class="pildora-paso">
-      <img src="/flecha-arriba.svg" alt="Anterior" />
-    </button>
-    <button id="btn-paso-abajo" class="pildora-paso">
-      <img src="/flecha-abajo.svg" alt="Siguiente" />
-    </button>
-  </div>
-
+</div>
+<div id="contenedor-info">
 </div>
 
 <style>
-  /* Retícula de 30x14 - Módulos de 41.12px */
-  #contenedor-pizarra {
-    display: grid;
-    grid-template-columns: repeat(30, 41.12px);
-    grid-template-rows: repeat(14, 41.12px);
+  .fondob {
     position: absolute;
-    top: 0;
-    left: 0;
+  }
+  .arribab {
+    position: absolute;
+    z-index: 6;
+    width: 77%;
+    
+  }
+
+  .fondobajo {
+    position: absolute;
+    width: 84%;
+  }
+  .abajob {
+    position: absolute;
+    z-index: 6;
+    width: 60%;
+  }
+
+  #navegadorpasos {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    grid-column: 22/24;
+    grid-row: 7/12;
+    width: 100%;
     z-index: 5;
-    pointer-events: none; /* Dejamos pasar clicks a los botones */
+    margin-top: 80%;
+    margin-bottom: 80%;
   }
 
-  #contenedor-pizarra > * {
-    pointer-events: auto; /* Activamos clicks solo para los hijos */
+  .navegador-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 66%;
+    height: 100%%;
+    position: relative;
   }
 
-  /* Área Azul de Información */
-  .mySwiper {
-    grid-column: 4 / 27; 
-    grid-row: 4 / 10;
+  .pizarraprincipal {
+    display: flex;
+    background-color: #F2E9C7;
+    border-radius: 20px;
+    /* border: 20px solid #188AE3; */
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
     width: 100%;
     height: 100%;
-    overflow: hidden;
-    background-color: #148adb;
+    justify-content: center;
+    align-items: center;
+  }
+  #fondoazulinfo {
+    background-color: #0668A9;
+    grid-row: 5/14;
+    grid-column: 7/23;
+    z-index: 4;
+    margin: 5.5% 0px 5.5% 5.5%;
     border-radius: 20px;
   }
 
-  .swiper-slide {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 30px;
-  }
-
-  .texto-pizarra {
-    color: white;
-    font-family: "Fredoka", sans-serif;
-    font-size: 1.8rem;
-    text-align: left;
-    white-space: pre-line;
-  }
-
-  /* Estilo de las Cápsulas Amarillas */
-  #capsulas-navegacion {
-    grid-column: 4 / 27;
-    grid-row: 11 / 12;
+  #pizarracomp {
+    background-color: #F4DB74;
+    grid-column: 7/26;
+    grid-row: 5/14;
+    z-index: 3;
     display: flex;
     justify-content: center;
-    gap: 15px;
     align-items: center;
+    padding: 20px;
+    margin: 2.38%;
+    border-radius: 20px;
   }
 
-  .capsula {
-    background-color: #fcdf50;
-    border: 4px solid #148adb;
-    border-radius: 50px;
-    padding: 5px 25px;
-    font-family: "Coiny", cursive;
-    color: #148adb;
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: all 0.2s ease;
+  video {
+    overflow: hidden;
   }
 
-  .capsula.active {
-    background-color: #ffffff;
-    transform: scale(1.1);
+  #contenedor-info {
+    grid-row: 6/13;
+    grid-column: 7/13;
+    background-color: #E0B812;
+    z-index: 5;
+    padding-top: 40px;
+    border-radius: 0px 54px 54px 0px;
+    margin: 15% 13% 15% 15%;
+    border-top: 5.9px solid #AA8B0B;
+    border-right: 5.9px solid #AA8B0B;
+    border-bottom: 5.9px solid #AA8B0B;
+  }
+  #contenedor-info p {
+    font-family: "Fredoka", sans-serif;
+    font-weight: 300;
+    color: #ffffff;
+    text-align: center;
+    padding-left: 14%;
+    padding-right: 13.4%;
+    font-size: 95%;
+    letter-spacing: -0.1%;
+    line-height: 130%;
+    text-align: left;
   }
 
-  /* Flechas Laterales (Píldoras) */
-  #flechas-pasos {
-    grid-column: 28 / 29;
-    grid-row: 5 / 9;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .pildora-paso {
-    background-color: #fcdf50;
-    border: 3px solid #148adb;
-    border-radius: 15px;
-    padding: 10px;
-    cursor: pointer;
-  }
-
-  /* Base de la Pizarra */
   #pizarrabase {
-    position: absolute;
-    width: 1233.6px;
-    height: 575.68px;
-    background: #fdfbf7;
-    border: 8px solid #148adb;
-    border-radius: 40px;
-    z-index: 1;
-  }
-
-  #Pestanatitulo {
-    position: absolute;
-    grid-column: 17/27;
-    grid-row: 2/4;
-    z-index: 10;
+    border-radius: 50px;
+    grid-column: 6/27;
+    grid-row: 4/15;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px;
   }
 
   .esquinas {
-    position: absolute;
     width: 100%;
     height: 100%;
-    pointer-events: none;
+    object-fit: fill;
   }
+
+
+  #repro {
+    margin-top: 48%;
+    margin-bottom: 40%;
+    grid-row: 7/12;
+    grid-column: 25/27;
+    display: flex;
+    z-index: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 2.5%;
+  }
+
+
+  .reprod {
+    width: 100%;
+  }
+
+  .reprod:hover {
+    transform: scale(1.25);
+  }
+
+  #decorepro {
+    width: 65%;
+    margin-bottom: 4%;
+  }
+
+  .reprodd {
+    width: 100%;
+        }
+
+        #Pestanatitulo {
+            margin-left:8.8%;
+            margin-right: 8.8%;
+            grid-column: 17/27;
+            grid-row: 4/6;
+            max-width: 100%;
+        }
+
+  
 </style>
 
 <script>
-  import Swiper from 'swiper';
+  const inicializarVideo = () => {
+    const video =
+      (document.getElementById("video-p") as HTMLVideoElement) ||
+      document.querySelector("video");
+    const btnPlay = document.getElementById("btn-play-pausa");
+    const btnReplay = document.getElementById("btn-replay");
 
-  const swiper = new Swiper(".mySwiper", {
-    speed: 400,
-    allowTouchMove: false,
-  });
+    console.log("--- Reporte de Conexión ---");
+    console.log("Video encontrado:", !!video);
+    console.log("Botón Play encontrado:", !!btnPlay);
+    console.log("Botón Replay encontrado:", !!btnReplay);
 
-  // Manejo de Cápsulas
-  const capsulas = document.querySelectorAll('.capsula');
-  capsulas.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const index = parseInt(btn.getAttribute('data-index'));
-      swiper.slideTo(index);
-      
-      capsulas.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-    });
-  });
+    if (video && btnPlay && btnReplay) {
+      btnPlay.onclick = () => {
+        if (video.paused) {
+          video.play();
+          console.log("▶️ Reproduciendo...");
+        } else {
+          video.pause();
+          console.log("⏸️ Pausado.");
+        }
+      };
 
-  // Navegación de Pasos (Botones Derecha)
-  const btnArriba = document.getElementById('btn-paso-arriba');
-  const btnAbajo = document.getElementById('btn-paso-abajo');
+      btnReplay.onclick = () => {
+        video.currentTime = 0;
+        video.play();
+        console.log("🔄 Replay activado.");
+      };
 
-  // Aquí puedes programar el salto a los IDs de la barra izquierda
-  btnArriba.onclick = () => {
-     // Lógica para ir al paso anterior
+      console.log("✅ ¡Todo listo! Los botones ya controlan el video.");
+    } else {
+      console.error(
+        "❌ Error: No se pudo establecer la conexión. Revisa que los IDs coincidan."
+      );
+    }
   };
 
-  btnAbajo.onclick = () => {
-     // Lógica para ir al siguiente paso
-  };
+  // Ejecución inmediata al cargar el componente
+  inicializarVideo();
+
+  // Refuerzo: Astro a veces necesita un pequeño respiro para juntar los componentes
+  setTimeout(inicializarVideo, 500);
 </script>

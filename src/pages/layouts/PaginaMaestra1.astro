@@ -19,6 +19,16 @@
 
 
 <style is:global>
+   @media screen and (min-width: 1400px) {
+
+      :root { --zoom-factor: calc(100vw / 1400); }
+    
+      body {
+        transform: scale(var(--zoom-factor));
+        transform-origin: top center;
+        overflow-x: hidden;
+        }
+  }  
   /* --- FUENTE COINY --- */
   @font-face {
     font-family: 'Coiny';
@@ -63,6 +73,8 @@
     margin: 0;
     padding: 0;
   }
+
+    
 /* 2. El body: Maneja el FONDO GENERAL y el CENTRADO */
   body {
     /* --- CONFIGURACIÓN DE LA IMAGEN DE FONDO --- */
@@ -85,6 +97,7 @@
     overflow: hidden;
   }
 
+ 
   
 
 </style>

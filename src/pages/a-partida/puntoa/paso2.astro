@@ -9,9 +9,10 @@ import Barraizquierda from "../../../components/barraizquierda.astro";
 import tablatutorial from "../../../../tablatutorial.json";
 import PaginaMaestrapuntoa from "../../layouts/PaginaMaestrapuntoa.astro";
 import Pizarratutorial from "../../../components/Pizarratutorial.astro";
+import Pizarratutorial1 from "../../../components/Pizarratutorial1.astro";
 
 // Buscamos el ejercicio que coincida con esta página
-const miejercicio = tablatutorial.find((item) => item.id === "puntoa-a");
+const miejercicio = tablatutorial.find((item) => item.id === "paso2");
 
 // Recibimos los datos como parámetros
 const { video, instruccion, titulo, bdere1, bdere2, bdere3, bdere4 } =
@@ -21,11 +22,11 @@ const { video, instruccion, titulo, bdere1, bdere2, bdere3, bdere4 } =
 <PaginaMaestrapuntoa>
     <div id="ContenedorPrin">
         <!--inicio chorrera de codigo -->
-        <Barraizquierda section="modelado" />
+        <Barraizquierda section="paso2" />
         <!--fin chorrera de codigo -->
 
 
-        <Pizarratutorial miejercicio={miejercicio} />
+        <Pizarratutorial1 miejercicio={miejercicio} />
 
     </div>
 

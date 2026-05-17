@@ -6,6 +6,11 @@ import Barrarecortado from './svgs/Barrarecortado.astro';
 import Barratrazos from './svgs/Barratrazos.astro';
 import Barravocales from './svgs/Barravocales.astro';
 import Barranumeros from './svgs/Barranumeros.astro';
+import Barrapuntoa from './svgs/Barrapuntoa.astro';
+import Barrapaso1 from './svgs/Barrapaso1.astro';
+import Barrapaso2 from './svgs/Barrapaso2.astro';
+import Barrapaso3 from './svgs/Barrapaso3.astro';
+import Barrapaso4 from './svgs/Barrapaso4.astro';
 // Si es diferente, si no, reutiliza uno de los anteriores
 // Importa los demás según los crees
 
@@ -19,7 +24,12 @@ const COMPONENTS = {
     recortado: Barrarecortado, // Ajustar según corresponda
     trazos: Barratrazos,
     vocales: Barravocales,
-    numeros: Barranumeros
+    numeros: Barranumeros,
+    puntoa: Barrapuntoa,
+    paso1: Barrapaso1,
+    paso2: Barrapaso2,
+    paso3: Barrapaso3,
+    paso4: Barrapaso4
 };
 
 const SelectedBarra = COMPONENTS[section] || Barramodelado;

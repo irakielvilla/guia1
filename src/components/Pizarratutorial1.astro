@@ -1,0 +1,315 @@
+---
+// Componente: Pizarratutorial1.astro
+const { miejercicio } = Astro.props;
+
+if (!miejercicio) {
+  return Astro.redirect("/");
+}
+
+// 🗺️ MAPA DE NAVEGACIÓN VERTICAL CORREGIDO CON TUS RUTAS EXACTAS
+const secuenciaPasos = ["puntoa-a", "paso1", "paso2", "paso3", "paso4"];
+const posicionActual = secuenciaPasos.indexOf(miejercicio.id);
+
+// Calculamos los IDs hermanos de forma segura para no desbordar el array
+const idAnterior = posicionActual > 0 ? secuenciaPasos[posicionActual - 1] : secuenciaPasos[0];
+const idSiguiente = posicionActual < secuenciaPasos.length - 1 ? secuenciaPasos[posicionActual + 1] : secuenciaPasos[secuenciaPasos.length - 1];
+
+// 🚀 RUTAS OFICIALES CONECTADAS DE FORMA EXACTA
+const arribaUrl = `/a-partida/puntoa/${idAnterior}`;
+const abajoUrl = `/a-partida/puntoa/${idSiguiente}`;
+
+// 🧠 FILTRO DINÁMICO DE PÁGINAS DEL CARRUSEL (Texto + Imagen)
+const pagKeys = Object.keys(miejercicio)
+  .filter(key => key.startsWith('pag'))
+  .sort((a, b) => {
+    const numA = parseInt(a.replace('pag', ''), 10);
+    const numB = parseInt(b.replace('pag', ''), 10);
+    return numA - numB;
+  });
+
+const paginas = pagKeys.map(key => {
+  const num = key.replace('pag', '');
+  return {
+    texto: miejercicio[key],
+    imagen: miejercicio[`imgpag${num}`] || `/puntoa/${miejercicio.id}img${num}.svg`
+  };
+});
+---
+
+<div id="pizarrabase">
+  <img class="esquinas" src="/esquinasamarillas.png" alt="Esquinas" />
+</div>
+
+<div id="Pestanatitulo">
+  <img src={miejercicio.titulo} alt="Título" />
+</div>
+
+<div id="pizarracomp">
+  <div class="pizarraprincipal"></div>
+  <div id="bordeazul"></div>
+</div>
+
+<div id="fondoazulinfo"></div>
+
+<div id="contenedor-info">
+  {paginas[0] && (
+    <img id="img-tutorial-dinamica" src={paginas[0].imagen} alt="Material Inicial" />
+  )}
+</div>
+
+<div id="contenedor-swiper-texto">
+  <div class="swiper mySwiperTutorial">
+    <div class="swiper-wrapper">
+      {paginas.map((pag, index) => (
+        <div class="swiper-slide" data-slide-image={pag.imagen}>
+          <p class="fredoka-texto" set:html={pag.texto}></p>
+        </div>
+      ))}
+    </div>
+    
+    <div class="swiper-pagination"></div>
+  </div>
+</div>
+
+<div id="navegadorpasos">
+  <a id="arriba" class="navegador-btn" href={arribaUrl} title="Ir al paso anterior">
+    <img class="arribab" src="/puntoa/arriba.svg" alt="Arriba">
+    <img class="fondob" src="/puntoa/fondoarriba.svg" alt="Fondo">
+  </a>
+  <a id="abajo" class="navegador-btn" href={abajoUrl} title="Ir al paso siguiente">
+    <img class="abajob" src="/puntoa/abajo.svg" alt="Abajo">
+    <img class="fondobajo" src="/puntoa/fondoabajo.svg" alt="Fondo">
+  </a>
+</div>
+
+<style is:global>
+  .mySwiperTutorial .swiper-pagination-bullet {
+    width: 20px !important;
+    height: 9px !important;
+    border-radius: 6px !important;
+    background-color: #E0B812 !important;
+    opacity: 0.5 !important;
+    transition: all 0.3s ease !important;
+    margin: 0 5px !important;
+  }
+
+  .mySwiperTutorial .swiper-pagination-bullet-active {
+    width: 42px !important;
+    background-color: #0668A9 !important;
+    opacity: 1 !important;
+  }
+</style>
+
+<style>
+  #pizarrabase {
+    border-radius: 50px;
+    grid-column: 6/27;
+    grid-row: 4/15;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px;
+  }
+
+  .esquinas {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  #Pestanatitulo {
+    margin-left: 8.8%;
+    margin-right: 8.8%;
+    grid-column: 17/27;
+    grid-row: 4/6;
+    max-width: 100%;
+    z-index: 1;
+  }
+
+  #pizarracomp {
+    background-color: #F4DB74;
+    grid-column: 7/26;
+    grid-row: 5/14;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 2.38%;
+    border-radius: 20px;
+  }
+
+  .pizarraprincipal {
+    width: 100%;
+    height: 100%;
+    background-color: #F2E9C7;
+    border-radius: 20px;
+    box-sizing: border-box;
+  }
+
+  #fondoazulinfo {
+    background-color: #0668A9;
+    grid-row: 5/14;
+    grid-column: 7/23;
+    z-index: 4;
+    margin: 5.5% 0px 5.5% 5.5%;
+    border-radius: 20px;
+  }
+
+  #contenedor-info {
+    grid-row: 6/13;
+    grid-column: 7/13;
+    background-color: #E0B812;
+    z-index: 5;
+    border-radius: 0px 54px 54px 0px;
+    margin: 15% 13% 15% 15%;
+    border-top: 5.9px solid #AA8B0B;
+    border-right: 5.9px solid #AA8B0B;
+    border-bottom: 5.9px solid #AA8B0B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  #img-tutorial-dinamica {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    transition: opacity 0.2s ease-in-out; 
+  }
+
+  #contenedor-swiper-texto {
+    grid-row: 6/13;
+    grid-column: 14/22;
+    z-index: 5;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .swiper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 10px 50px 10px;
+    box-sizing: border-box;
+  }
+
+  .fredoka-texto {
+    font-family: "Fredoka", sans-serif;
+    font-size: 1.5rem;
+    color: #333333;
+    text-align: left;
+    line-height: 1.4;
+    margin: 0;
+    width: 100%;
+  }
+
+  .swiper-pagination {
+    position: absolute;
+    bottom: 10px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    z-index: 10;
+  }
+
+  #navegadorpasos {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    grid-column: 22/24;
+    grid-row: 7/12;
+    width: 100%;
+    z-index: 5;
+    margin-top: 80%;
+    margin-bottom: 80%;
+    row-gap: 96%;
+  }
+
+  .navegador-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 66%;
+    height: 100%;
+    position: relative;
+    text-decoration: none;
+  }
+
+  .fondob {
+    position: absolute;
+  }
+  .arribab {
+    position: absolute;
+    z-index: 6;
+    width: 77%;
+  }
+
+  .fondobajo {
+    position: absolute;
+    width: 84%;
+  }
+  .abajob {
+    position: absolute;
+    z-index: 6;
+    width: 60%;
+  }
+</style>
+
+<script>
+  import Swiper from "swiper";
+  import { Pagination } from "swiper/modules";
+  import "swiper/css";
+  import "swiper/css/pagination";
+
+  const habilitarPizarraInteractiva = () => {
+    const imgDinamica = document.getElementById("img-tutorial-dinamica") as HTMLImageElement;
+
+    if (!imgDinamica) return;
+
+    new Swiper(".mySwiperTutorial", {
+      modules: [Pagination],
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      on: {
+        init: function () {
+          const slideInicial = this.slides[this.activeIndex];
+          if (slideInicial) {
+            const rutaImg = slideInicial.getAttribute("data-slide-image");
+            if (rutaImg) imgDinamica.src = rutaImg;
+          }
+        },
+        slideChange: function () {
+          const slideActivo = this.slides[this.activeIndex];
+          
+          if (slideActivo) {
+            const nuevaRuta = slideActivo.getAttribute("data-slide-image");
+            
+            if (nuevaRuta) {
+              imgDinamica.style.opacity = "0.1";
+              
+              setTimeout(() => {
+                imgDinamica.src = nuevaRuta;
+                imgDinamica.style.opacity = "1";
+              }, 150);
+            }
+          }
+        },
+      },
+    });
+  };
+
+  document.addEventListener("DOMContentLoaded", habilitarPizarraInteractiva);
+  document.addEventListener("astro:page-load", habilitarPizarraInteractiva);
+</script>

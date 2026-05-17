@@ -92,15 +92,16 @@ Desarrollo:
 - Lógica de video estabilizada con soporte para reinicio y control de estado.
 
 Contenido Implementado:
-- Sección A (Punto de Partida): Página introductoria `puntoa-a.astro` con tutorial completo implementada.
+- Sección A (Punto de Partida): Página introductoria `puntoa-a.astro` ya implementada; actualmente en desarrollo la parte A de Punto de partida.
 - Sección B (Motricidad Fina): 12 actividades completamente implementadas:
   - Modelado 1: 4 actividades (modelado1-1 a modelado1-4)
   - Plegado 3: 4 actividades (plegado3-1 a plegado3-4)
   - Recortado 2: 4 actividades (recortado2-1 a recortado2-4)
   - Coloreado: 4 actividades — estructura implementada; contenido pendiente de completar.
 - Sección C (Pregraficos): 
+  - Grafomotriz ya montada y navegable.
   - Trazos: 1 actividad implementada (trazos1.astro)
-  - Números y Vocales: Estructuras preparadas (pendientes de implementación)
+  - Números y Vocales: estructura preparada; solo faltan los videos.
 
 Datos: 
 - `tablavideos.json`: Contiene datos para actividades de modelado, plegado y recortado.

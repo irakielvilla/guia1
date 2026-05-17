@@ -6,46 +6,27 @@ import PaginaMaestra1 from "../../layouts/PaginaMaestra1.astro";
 // Importamos el nuevo componente
 import Barraizquierda from "../../../components/barraizquierda.astro";
 // Importamos el JSON (como en tu foto)
-import tablavideos from "../../../../tablavideos.json";
+import tablatutorial from "../../../../tablatutorial.json";
+import PaginaMaestrapuntoa from "../../layouts/PaginaMaestrapuntoa.astro";
+import Pizarratutorial1 from "../../../components/Pizarratutorial1.astro";
 
 // Buscamos el ejercicio que coincida con esta página
-const miejercicio = tablavideos.find((item) => item.id === "modelado1-1");
+const miejercicio = tablatutorial.find((item) => item.id === "paso1");
 
 // Recibimos los datos como parámetros
 const { video, instruccion, titulo, bdere1, bdere2, bdere3, bdere4 } =
     Astro.props;
 ---
 
-<PaginaMaestra1>
+<PaginaMaestrapuntoa>
     <div id="ContenedorPrin">
         <!--inicio chorrera de codigo -->
-        <Barraizquierda section="modelado" />
+        <Barraizquierda section="paso1" />
         <!--fin chorrera de codigo -->
 
 
-        <Pizarra miejercicio={miejercicio} />
+        <Pizarratutorial1 miejercicio={miejercicio} />
 
-        <div id="barraderecha">
-            <img class="barradere" src="/barraderecha.svg" alt="" />
-        </div>
-
-        <div id="bbarraderecha">
-            <a href="/b-motricidad/modelado1/modelado1-1/"
-                ><img class="ejers" src={miejercicio.bdere1} alt="" />
-            </a>
-
-            <a href="/b-motricidad/modelado1/modelado1-2/"
-                ><img class="ejers" src={miejercicio.bdere2} alt="" />
-            </a>
-
-            <a href="/b-motricidad/modelado1/modelado1-3/"
-                ><img class="ejers" src={miejercicio.bdere3} alt="" />
-            </a>
-
-            <a href="/b-motricidad/modelado1/modelado1-4/"
-                ><img class="ejers" src={miejercicio.bdere4} alt="" />
-            </a>
-        </div>
     </div>
 
     <style>
@@ -141,7 +122,5 @@ const { video, instruccion, titulo, bdere1, bdere2, bdere3, bdere4 } =
         .pregracc:hover {
             color: blue;
         }
-
-    
     </style>
-</PaginaMaestra1>
+</PaginaMaestrapuntoa>
