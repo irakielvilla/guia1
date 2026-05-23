@@ -97,6 +97,12 @@ const paginas = pagKeys.map(key => {
     margin: 0 1.8% !important;
   }
 
+  /* Efecto Hover para las cápsulas */
+  .mySwiperTutorial .swiper-pagination-bullet:hover {
+    transform: scale(1.1) !important;
+  }
+  
+
   /* Cápsula Activada (Slide donde está interactuando el niño) */
   .mySwiperTutorial .swiper-pagination-bullet-active {
     background-image: url('/puntoa/capsulaact.png') !important; /* Tu SVG activo alargado */
@@ -222,7 +228,7 @@ const paginas = pagKeys.map(key => {
     top: 85% !important;
     bottom: 17% !important;
     left: 50% !important;
-    transform: translateX(-54.4%) !important;
+    transform: translateX(-54.2%) !important;
     z-index: 10;
     display: flex;
     justify-content: flex-start;
@@ -275,7 +281,14 @@ const paginas = pagKeys.map(key => {
     position: absolute;
     z-index: 6;
     width: 60%;
+   transition: transform 0.2s ease;
   }
+ .abajob:hover {
+    transform: scale(1.1);
+  }
+
+
+
 </style>
 
 <script>

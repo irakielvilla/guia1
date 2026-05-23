@@ -101,6 +101,11 @@ const paginas = pagKeys.map(key => {
     margin: 0 3.7% !important;
   }
 
+  /* Efecto Hover para las cápsulas */
+  .mySwiperTutorial .swiper-pagination-bullet:hover {
+    transform: scale(1.1) !important;
+  }
+
   /* Cápsula Activada (Slide donde está interactuando el niño) */
   .mySwiperTutorial .swiper-pagination-bullet-active {
     background-image: url('/puntoa/capsulaact.png') !important; /* Tu SVG activo alargado */
@@ -261,10 +266,10 @@ margin: 15% 13% 15% 14.8%;  /*cambiar el 14.8 en todos*/
     position: absolute;
     z-index: 6;
     width: 77%;
-    transition: calc(0.2s); //Agrega una transición suave para el efecto hover
+    transition: transform 0.2s ease;
 
   }
-  // Efecto hover para hacer que la flecha crezca un poco al pasar el mouse
+
   .arribab:hover {
     transform: scale(1.1);
   }
@@ -277,7 +282,12 @@ margin: 15% 13% 15% 14.8%;  /*cambiar el 14.8 en todos*/
     position: absolute;
     z-index: 6;
     width: 60%;
+    transition: transform 0.2s ease;
   }
+  .abajob:hover {
+    transform: scale(1.1);
+  }
+
 
   .is-disabled {
     pointer-events: none;
