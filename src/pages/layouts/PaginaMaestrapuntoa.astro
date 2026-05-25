@@ -26,14 +26,12 @@
 
 <style>
   .super-contenedor {
-    /* Forzamos al contenedor a tener el tamaño IDEAL de tu diseño */
     width: 1400px;
-    min-height: 100vh;
+    /* 2. ¡CAMBIAMOS LA CHINCHETA! */
+    /* Como el body ya lo está centrando, necesitamos que al achicarse 
+       lo haga hacia su propio centro, no hacia el techo */
+    transform-origin: center center;
     
-    /* El ancla de reducción/ampliación */
-    transform-origin: top center;
-    
-    /* Para que el contenido interno no se desborde del lienzo */
     overflow: hidden; 
 }
 
@@ -47,7 +45,8 @@
     .super-contenedor {
         transform: scale(var(--zoom-factor));
         transform-origin: center center;
-        margin: 3% 0 0 0;
+        margin: 0 0 0 0;
+        overflow: visible;
     }
 }
 
@@ -125,9 +124,9 @@
     /* --- CONFIGURACIÓN DEL CENTRADO DEL CONTENEDOR --- */
     display: flex;
     justify-content: center; /* Centrado horizontal */
-    align-items: flex-start;     /* Centrado vertical */
+    align-items: center;     /* Centrado vertical */
     min-height: 100vh;
-    margin-top: 1%;       /* Asegura que el body ocupe todo el alto de la pantalla del navegador */
+    margin-top: 0;       /* Asegura que el body ocupe todo el alto de la pantalla del navegador */
     
     /* --- COMPORTAMIENTO DE SCROLL --- */
     /* Si la ventana del navegador es más pequeña que 1400x650px, aparecerán barras de scroll */
