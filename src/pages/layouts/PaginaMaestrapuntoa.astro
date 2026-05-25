@@ -6,7 +6,7 @@ import AlertaVertical from "../../components/AlertaVertical.astro"
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
 	</head>
@@ -68,6 +68,7 @@ import AlertaVertical from "../../components/AlertaVertical.astro"
         transform-origin: center top;
         overflow: visible;
         min-height: 100dvh; /* 'dvh' es 'dynamic viewport height', especial para Safari móvil */
+        background-color: #fce86c;
     }
 }
  
@@ -117,6 +118,7 @@ import AlertaVertical from "../../components/AlertaVertical.astro"
   }
 /* 2. El body: Maneja el FONDO GENERAL y el CENTRADO */
   body {
+    background-color: #fce86c;
     margin: 0;
     padding: 0;
     /* --- CONFIGURACIÓN DE LA IMAGEN DE FONDO --- */
