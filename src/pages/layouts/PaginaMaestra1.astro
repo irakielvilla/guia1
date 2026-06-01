@@ -148,7 +148,7 @@ import AlertaVertical from "../../components/AlertaVertical.astro"
 
     opacity: 0;
         visibility: hidden;
-        transition: opacity 0.4s ease, visibility 0.4s ease;
+        transition: opacity 0.5s ease, visibility 0.5s ease;
         background-color: #0059ff; /* Mantenemos tu color amarillo de fondo mientras carga */
   }
 
@@ -157,10 +157,36 @@ import AlertaVertical from "../../components/AlertaVertical.astro"
 </style>
 
 <script>
-      // El evento 'load' de window se dispara UNICAMENTE cuando el HTML,
-      // las imágenes, los SVGs embebidos y los estilos se descargaron y renderizaron por completo.
+      // 1. Efecto Fade-IN al cargar
       window.addEventListener('load', () => {
-        // Añadimos la clase al body para revelar la app infantil mágicamente
         document.body.classList.add('todo-cargado');
+      });
+
+      // 2. Efecto Fade-OUT súper robusto (HTML + SVG)
+      document.addEventListener('click', (evento) => {
+        const enlace = evento.target.closest('a');
+
+        if (!enlace) return;
+
+        // EXTRACCIÓN SEGURA: Leemos el atributo crudo (funciona igual en <a> de HTML y <a> de SVG)
+        const ruta = enlace.getAttribute('href') || enlace.getAttribute('xlink:href');
+        
+        // Si por alguna razón el enlace está vacío o es un ancla interna (#), no hacemos nada
+        if (!ruta || ruta.startsWith('#')) return;
+
+        // Convertimos la ruta en un objeto URL real basado en la dirección actual de tu página
+        const urlDestino = new URL(ruta, window.location.href);
+
+        // Validaciones: no secuestrar si tiene target="_blank" o si va a otra página web distinta
+        if (enlace.getAttribute('target') === '_blank' || urlDestino.host !== window.location.host) return;
+
+        // ¡Secuestramos el clic con éxito!
+        evento.preventDefault();
+        
+        document.body.classList.remove('todo-cargado');
+
+        setTimeout(() => {
+          window.location.href = urlDestino.href; // Usamos la URL limpia
+        }, 500); // 400ms de la animación
       });
     </script>

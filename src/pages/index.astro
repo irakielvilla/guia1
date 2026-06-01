@@ -132,5 +132,33 @@ outline: none;
     background-size: calc(41.12px + 5.74px) calc(41.12px + 5.74px); */
         }
 </style>
+
+<script>
+  // 1. Configurar el tiempo (5 minutos en milisegundos) para el navegador
+  const COOLDOWN_TIME = 5 * 60 * 1000; 
+  
+  const lastVisit = localStorage.getItem('lastTelegramNotify');
+  const now = Date.now();
+
+  // 2. Comprobar si han pasado 5 minutos
+  if (!lastVisit || (now - parseInt(lastVisit)) > COOLDOWN_TIME) {
+    
+    // PEGA AQUÍ LA URL LARGA QUE TE DIO GOOGLE (La que termina en /exec)
+    const googleURL = 'https://script.google.com/macros/s/AKfycbwQtuJlQxU7suel_b2htXTUylIDm7k5ilf3edDmVxjh9Yd--ICiluiFhXRhfKenOw0h/exec';
+
+    // Usamos el modo no-cors para evitar bloqueos del navegador
+    fetch(googleURL, { method: 'GET', mode: 'no-cors' })
+      .then(() => {
+        // Guardamos la hora actual
+        localStorage.setItem('lastTelegramNotify', now.toString());
+        console.log("Aviso enviado a Telegram con éxito.");
+      })
+      .catch(err => console.error("Error al notificar:", err));
+
+  } else {
+    const minutesLeft = Math.ceil((COOLDOWN_TIME - (now - parseInt(lastVisit))) / 60000);
+    console.log(`Visita reciente detectada. Faltan ${minutesLeft} min para el próximo reporte posible.`);
+  }
+</script>
         
 </PaginaMaestra1>
