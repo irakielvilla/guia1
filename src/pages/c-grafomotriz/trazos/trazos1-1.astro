@@ -59,7 +59,13 @@ const { video, instruccion, titulo, bdere1, bdere2, bdere3, bdere4 } =
     </div>
 
     <style>
-        .botonpa {
+            
+    :global(.botonpimg:hover){
+        transform: scale(1.2);
+        transition: transform 0.3s ease;
+    }
+        
+    .botonpa {
         position: relative;
         display: inline-block;
         width: fit-content;
@@ -68,12 +74,9 @@ const { video, instruccion, titulo, bdere1, bdere2, bdere3, bdere4 } =
         width: 87%;
         position: relative;
         rotate: 180deg;
+        transition: transform 0.3s ease;
     }
     .botonp {
-        /* padding-top: 15%;
-        padding-bottom: 80%;
-        
-        margin-right: 20%; */
         margin-top: 6%;
         margin-left: 15%;
         display: flex;

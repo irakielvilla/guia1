@@ -5,8 +5,12 @@ import PaginaMaestra1 from "../layouts/PaginaMaestra1.astro"
     <div id="ContenedorPrin"> 
 
         <div class="personajes">
-            <img src="/portada/nivel2.svg">
-            <img src="/portada/nivel3.svg">
+            <a class="nivel2" href="/c-grafomotriz/numeros/numeros3-9/">
+                <img class="nivel12img" src="/portada/nivel2.svg" alt="Nivel 2">
+            </a>
+            <a class="nivel3" href="/c-grafomotriz/numeros/numeros3-9/">
+                <img class="nivel13img" src="/portada/nivel3.svg" alt="Nivel 3">
+            </a>
         </div>
         <div class="pizarrafinal">
             <img src="/portada/pizarracp.svg" alt="Pizarra Final">
@@ -26,16 +30,51 @@ import PaginaMaestra1 from "../layouts/PaginaMaestra1.astro"
   </div>
 
 <style>
-        .botonpa {
+    .nivel3 {
+        padding-top: 1%;
+        width: 50%;
+    }
+    .nivel13img {
+        transition: transform 0.3s ease;
+         }
+
+    :global(.nivel13img:hover){
+        transform: scale(1.05);
+        transition: transform 0.3s ease;
+
+    }
+
+
+    .nivel2 {
+        width: 43%;
+    }
+    .nivel12img {
+        transition: transform 0.3s ease;
+         }
+        
+    
+    :global(.nivel12img:hover){
+        transform: scale(1.05);
+        transition: transform 0.3s ease;
+
+    }
+
+    :global(.botonpa) {
         position: relative;
         display: inline-block;
         width: fit-content;
+        ;
     }
     .botonpimg {
         width: 75%;
         position: relative;
         rotate: 180deg;
         left: 12%;
+        transition: transform 0.3s ease;
+    }
+    :global(.botonpimg:hover){
+        transform: scale(1.2);
+        transition: transform 0.3s ease;
     }
     .botonp {
 
@@ -47,13 +86,14 @@ import PaginaMaestra1 from "../layouts/PaginaMaestra1.astro"
         width: 100%;
         height: 100%;
         z-index: 10 !important;
+        trasition: transform 0.3s ease;
     }
-    .personajes img {
+    :global(.personajes img) {
         height: 80%;
         width: auto;
         position: relative;
     }
-    .personajes {
+    :global(.personajes) {
         
         grid-column: 14 /  21; 
         grid-row: 9 /  14;
