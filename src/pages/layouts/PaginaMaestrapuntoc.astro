@@ -1,28 +1,24 @@
 ---
-import AlertaVertical from "../../components/AlertaVertical.astro"
+import AlertaVertical from "../../components/AlertaVertical.astro";
 const { title } = Astro.props;
 ---
----
 <html lang="es">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
+  	<head>
+      <meta charset="utf-8" />
+      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+      <meta name="generator" content={Astro.generator} />
+      <title>{title}</title>
+    </head>
+  <body>
     <body>
-    <AlertaVertical />
+      <AlertaVertical />
 
-    <div class="super-contenedor">
-        
+      <div class="super-contenedor">
         <slot />
-
-    </div>
-</body>
-	</body>
+      </div>
+    </body>
+  </body>
 </html>
 
 <style>
@@ -32,17 +28,17 @@ const { title } = Astro.props;
     /* Como el body ya lo está centrando, necesitamos que al achicarse 
        lo haga hacia su propio centro, no hacia el techo */
     transform-origin: center center;
-    
-    overflow: visible; 
-}
 
-:root {
+    overflow: visible;
+  }
+
+  :root {
     /* El navegador calcula la escala por ancho y por alto, y aplica SIEMPRE la menor. 
        Así garantiza que nunca se desborde ni se corte, sin importar la pantalla. */
     --zoom-factor: min(calc(100vw / 1400px), calc(100vh / 650px));
-}
+  }
 
-body {
+  body {
     margin: 0;
     padding: 0;
     width: 100vw;
@@ -52,9 +48,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-}
+  }
 
-.super-contenedor {
+  .super-contenedor {
     width: 1400px;
     height: 650px;
     /* Aplicamos la escala perfecta dinámica */
@@ -63,11 +59,11 @@ body {
     position: relative;
     /* Opcional: outline border para debuggear si lo necesitas */
     /* border: 2px solid red; */
-}
+  }
   /* --- FUENTE COINY --- */
   @font-face {
-    font-family: 'Coiny';
-    src: url('/fonts/Coiny-Regular.ttf') format('truetype');
+    font-family: "Coiny";
+    src: url("/fonts/Coiny-Regular.ttf") format("truetype");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -76,8 +72,8 @@ body {
   /* --- FUENTE FREDOKA --- */
   /* Registramos el peso Light */
   @font-face {
-    font-family: 'Fredoka';
-    src: url('/fonts/Fredoka-Light.ttf') format('truetype');
+    font-family: "Fredoka";
+    src: url("/fonts/Fredoka-Light.ttf") format("truetype");
     font-weight: 300;
     font-style: normal;
     font-display: swap;
@@ -85,8 +81,8 @@ body {
 
   /* Registramos el peso Regular */
   @font-face {
-    font-family: 'Fredoka';
-    src: url('/fonts/Fredoka-Regular.ttf') format('truetype');
+    font-family: "Fredoka";
+    src: url("/fonts/Fredoka-Regular.ttf") format("truetype");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -94,13 +90,12 @@ body {
 
   /* Registramos el peso SemiBold */
   @font-face {
-    font-family: 'Fredoka';
-    src: url('/fonts/Fredoka-SemiBold.ttf') format('truetype');
+    font-family: "Fredoka";
+    src: url("/fonts/Fredoka-SemiBold.ttf") format("truetype");
     font-weight: 600;
     font-style: normal;
     font-display: swap;
   }
-
 
   /* 1. Reset básico para asegurar que las medidas son exactas y no hay márgenes molestos */
   * {
@@ -108,18 +103,18 @@ body {
     margin: 0;
     padding: 0;
   }
-body.todo-cargado {
-        opacity: 1;
-        visibility: visible;
-      }
+  body.todo-cargado {
+    opacity: 1;
+    visibility: visible;
+  }
 
-/* 2. El body: Maneja el FONDO GENERAL y el CENTRADO */
+  /* 2. El body: Maneja el FONDO GENERAL y el CENTRADO */
   body {
     background-color: #f03b3b;
     margin: 0;
     padding: 0;
     /* --- CONFIGURACIÓN DE LA IMAGEN DE FONDO --- */
-    background-image: url('/bg/fondorojo.svg'); 
+    background-image: url("/bg/fondorojo.svg");
     /* Asegura que la imagen cubra toda la pantalla sin repetirse y esté centrada */
     background-size: cover;
     background-position: center;
@@ -129,54 +124,57 @@ body.todo-cargado {
     /* --- CONFIGURACIÓN DEL CENTRADO DEL CONTENEDOR --- */
     display: flex;
     justify-content: center; /* Centrado horizontal */
-    align-items: center;     /* Centrado vertical */
+    align-items: center; /* Centrado vertical */
     height: 100dvh; /* Usamos alto dinámico */
     width: 100vw;
-    
+
     /* --- COMPORTAMIENTO DE SCROLL --- */
     /* Si la ventana del navegador es más pequeña que 1400x650px, aparecerán barras de scroll */
     overflow: hidden;
     opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.5s ease, visibility 0.5s ease;
-       
+    visibility: hidden;
+    transition:
+      opacity 0.5s ease,
+      visibility 0.5s ease;
   }
-
-  
-
 </style>
 
 <script>
-      // 1. Efecto Fade-IN al cargar
-      window.addEventListener('load', () => {
-        document.body.classList.add('todo-cargado');
-      });
+  // 1. Efecto Fade-IN al cargar
+  window.addEventListener("load", () => {
+    document.body.classList.add("todo-cargado");
+  });
 
-      // 2. Efecto Fade-OUT súper robusto (HTML + SVG)
-      document.addEventListener('click', (evento) => {
-        const enlace = evento.target.closest('a');
+  // 2. Efecto Fade-OUT súper robusto (HTML + SVG)
+  document.addEventListener("click", (evento) => {
+    const enlace = evento.target.closest("a");
 
-        if (!enlace) return;
+    if (!enlace) return;
 
-        // EXTRACCIÓN SEGURA: Leemos el atributo crudo (funciona igual en <a> de HTML y <a> de SVG)
-        const ruta = enlace.getAttribute('href') || enlace.getAttribute('xlink:href');
-        
-        // Si por alguna razón el enlace está vacío o es un ancla interna (#), no hacemos nada
-        if (!ruta || ruta.startsWith('#')) return;
+    // EXTRACCIÓN SEGURA: Leemos el atributo crudo (funciona igual en <a> de HTML y <a> de SVG)
+    const ruta =
+      enlace.getAttribute("href") || enlace.getAttribute("xlink:href");
 
-        // Convertimos la ruta en un objeto URL real basado en la dirección actual de tu página
-        const urlDestino = new URL(ruta, window.location.href);
+    // Si por alguna razón el enlace está vacío o es un ancla interna (#), no hacemos nada
+    if (!ruta || ruta.startsWith("#")) return;
 
-        // Validaciones: no secuestrar si tiene target="_blank" o si va a otra página web distinta
-        if (enlace.getAttribute('target') === '_blank' || urlDestino.host !== window.location.host) return;
+    // Convertimos la ruta en un objeto URL real basado en la dirección actual de tu página
+    const urlDestino = new URL(ruta, window.location.href);
 
-        // ¡Secuestramos el clic con éxito!
-        evento.preventDefault();
-        
-        document.body.classList.remove('todo-cargado');
+    // Validaciones: no secuestrar si tiene target="_blank" o si va a otra página web distinta
+    if (
+      enlace.getAttribute("target") === "_blank" ||
+      urlDestino.host !== window.location.host
+    )
+      return;
 
-        setTimeout(() => {
-          window.location.href = urlDestino.href; // Usamos la URL limpia
-        }, 500); // 400ms de la animación
-      });
-    </script>
+    // ¡Secuestramos el clic con éxito!
+    evento.preventDefault();
+
+    document.body.classList.remove("todo-cargado");
+
+    setTimeout(() => {
+      window.location.href = urlDestino.href; // Usamos la URL limpia
+    }, 500); // 400ms de la animación
+  });
+</script>

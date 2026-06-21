@@ -13,204 +13,198 @@ const miejercicio = tablavideos.find((item) => item.id === "modelado1-1");
 
 // Recibimos los datos como parámetros
 const { video, instruccion, titulo, bdere1, bdere2, bdere3, bdere4 } =
-    Astro.props;
+  Astro.props;
 ---
 
 <PaginaMaestra1 title="Modelado 1.1 - Motricidad Fina">
-    <div id="ContenedorPrin">
-        <!--inicio chorrera de codigo -->
-        <Barraizquierda section="modelado" />
-        <!--fin chorrera de codigo -->
+  <div id="ContenedorPrin">
+    <!--inicio chorrera de codigo -->
+    <Barraizquierda section="modelado" />
+    <!--fin chorrera de codigo -->
 
+    <Pizarra miejercicio={miejercicio} />
 
-        <Pizarra miejercicio={miejercicio} />
-
-        <div id="barraderecha">
-            <img class="barradere" src="/barraderecha.svg" alt="" />
-        </div>
-
-        <div id="bbarraderecha">
-            <a href="/b-motricidad/modelado1/modelado1-1/"
-                ><img class="ejers" src={miejercicio.bdere1} alt="" />
-            </a>
-
-            <a href="/b-motricidad/modelado1/modelado1-2/"
-                ><img class="ejers" src={miejercicio.bdere2} alt="" />
-            </a>
-
-            <a href="/b-motricidad/modelado1/modelado1-3/"
-                ><img class="ejers" src={miejercicio.bdere3} alt="" />
-            </a>
-
-            <a href="/b-motricidad/modelado1/modelado1-4/"
-                ><img class="ejers" src={miejercicio.bdere4} alt="" />
-            </a>
-        </div>
-        <div class="personaje">
-            <img id="perso" src="/personajes/l11.svg" alt="">
-            <img class="manos" src="/personajes/l11ma.svg" alt="">
-           
-        </div>  
-
-        <div class="botonp">
-                 <a class="botonpa" href="/indice/portadillab">
-                    <img class="botonpimg" src="/portada/botonpamarillo.png" alt="Botón de Inicio">
-                </a>
-            </div>
+    <div id="barraderecha">
+      <img class="barradere" src="/barraderecha.svg" alt="" />
     </div>
 
-    <style>
-        :global(.botonpimg:hover){
-        transform: scale(1.2);
-        transition: transform 0.3s ease;
+    <div id="bbarraderecha">
+      <a href="/b-motricidad/modelado1/modelado1-1/"
+        ><img class="ejers" src={miejercicio.bdere1} alt="" />
+      </a>
+
+      <a href="/b-motricidad/modelado1/modelado1-2/"
+        ><img class="ejers" src={miejercicio.bdere2} alt="" />
+      </a>
+
+      <a href="/b-motricidad/modelado1/modelado1-3/"
+        ><img class="ejers" src={miejercicio.bdere3} alt="" />
+      </a>
+
+      <a href="/b-motricidad/modelado1/modelado1-4/"
+        ><img class="ejers" src={miejercicio.bdere4} alt="" />
+      </a>
+    </div>
+    <div class="personaje">
+      <img id="perso" src="/personajes/l11.svg" alt="" />
+      <img class="manos" src="/personajes/l11ma.svg" alt="" />
+    </div>
+
+    <div class="botonp">
+      <a class="botonpa" href="/indice/portadillab">
+        <img
+          class="botonpimg"
+          src="/portada/botonpamarillo.png"
+          alt="Botón de Inicio"
+        />
+      </a>
+    </div>
+  </div>
+
+  <style>
+    :global(.botonpimg:hover) {
+      transform: scale(1.2);
+      transition: transform 0.3s ease;
     }
-        .botonpa {
-        position: relative;
-        display: inline-block;
-        width: fit-content;
+    .botonpa {
+      position: relative;
+      display: inline-block;
+      width: fit-content;
     }
     .botonpimg {
-        width: 90%;
-        position: relative;
-        rotate: 180deg;
-        transition: transform 0.3s ease;
+      width: 90%;
+      position: relative;
+      rotate: 180deg;
+      transition: transform 0.3s ease;
     }
     .botonp {
-        /* padding-top: 15%;
+      /* padding-top: 15%;
         padding-bottom: 80%;
         
         margin-right: 20%; */
-        margin-top: 6%;
-        margin-left: 18%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        grid-column: 2/5 !important;
-        grid-row: 2/5 !important;
-        width: 100%;
-        height: 100%;
-        z-index: 10 !important;
+      margin-top: 6%;
+      margin-left: 18%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      grid-column: 2/5 !important;
+      grid-row: 2/5 !important;
+      width: 100%;
+      height: 100%;
+      z-index: 10 !important;
     }
-        .personaje {
-            grid-column: 12/16;
-            grid-row: 3/7;
-            width: 100%;
-            padding-right: 5%;
-            display: flex;
-            position: relative;
-        }
-        .personaje img {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-        }
+    .personaje {
+      grid-column: 12/16;
+      grid-row: 3/7;
+      width: 100%;
+      padding-right: 5%;
+      display: flex;
+      position: relative;
+    }
+    .personaje img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+    }
 
-        #perso {
-            z-index: 1;
-        }
-        .manos {
-            z-index: 5 !important;
-            position: absolute;
-            bottom: 1.5%;
-            
+    #perso {
+      z-index: 1;
+    }
+    .manos {
+      z-index: 5 !important;
+      position: absolute;
+      bottom: 1.5%;
+    }
+    #ContenedorPrin {
+      display: grid;
+      width: 1400px;
+      height: 650px;
+      overflow: visible;
 
-        }
-        #ContenedorPrin {
-            display: grid;
-            width: 1400px;
-            height: 650px;
-            overflow: visible;
+      /* Definición de Columnas: 30 módulos de 41.12px y 29 medianiles de 5.74px */
+      grid-template-columns: repeat(30, 41.12px);
+      column-gap: 5.74px;
 
-        
+      /* Definición de Filas: 14 módulos de 41.12px y 13 medianiles de 5.74px */
+      grid-template-rows: repeat(14, 41.12px);
+      row-gap: 5.74px;
 
-            /* Definición de Columnas: 30 módulos de 41.12px y 29 medianiles de 5.74px */
-            grid-template-columns: repeat(30, 41.12px);
-            column-gap: 5.74px;
-
-            /* Definición de Filas: 14 módulos de 41.12px y 13 medianiles de 5.74px */
-            grid-template-rows: repeat(14, 41.12px);
-            row-gap: 5.74px;
-
-            /* Opcional: para visualizar la retícula durante el diseño */
-            /* outline: 1px solid red; 
+      /* Opcional: para visualizar la retícula durante el diseño */
+      /* outline: 1px solid red; 
     background-image: 
         linear-gradient(to right, rgba(0,0,0,0.1) 41.12px, transparent 5.74px),
         linear-gradient(to bottom, rgba(0,0,0,0.1) 41.12px, transparent 5.74px);
     background-size: calc(41.12px + 5.74px) calc(41.12px + 5.74px); */
-        }
+    }
 
-        #Pizarra {
-            grid-column: 7/27;
-            grid-row: 4/14;
-            z-index: 1;
-            display: flex; /* Activa el modo flexible */
-            justify-content: center; /* Centra horizontalmente (Eje X) */
-            align-items: center; /* Centra verticalmente (Eje Y) */
-        }
-        .pizarraimg {
-            object-fit: contain;
-        }
+    #Pizarra {
+      grid-column: 7/27;
+      grid-row: 4/14;
+      z-index: 1;
+      display: flex; /* Activa el modo flexible */
+      justify-content: center; /* Centra horizontalmente (Eje X) */
+      align-items: center; /* Centra verticalmente (Eje Y) */
+    }
+    .pizarraimg {
+      object-fit: contain;
+    }
 
-        
+    #bbarraderecha {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      row-gap: 11.8%;
+      grid-column: 27/30;
+      grid-row: 6/15;
+      object-fit: none;
+      margin-left: 27%;
+      margin-right: 27%;
+    }
 
-        #bbarraderecha {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            row-gap: 11.8%;
-            grid-column: 27/30;
-            grid-row: 6/15;
-            object-fit: none;
-            margin-left: 27%;
-            margin-right: 27%;
-        }
+    .ejerdiv {
+      max-width: 100%;
+      max-height: 10%;
+    }
 
-        .ejerdiv {
-            max-width: 100%;
-            max-height: 10%;
-        }
+    .ejers {
+      width: 100%;
+      height: 95%;
+      overflow: hidden;
+      transition: transform 0.2s ease;
+    }
 
-        .ejers {
-            width: 100%;
-            height: 95%;
-            overflow: hidden;
-            transition: transform 0.2s ease;
-        }
+    .ejers:hover {
+      transform: scale(1.25);
+    }
+    #barraderecha {
+      grid-column: 26/31;
+      grid-row: 3/15;
+      object-fit: none;
+      padding-top: 12%;
+      margin-left: 15%;
+    }
+    .barradere {
+    }
 
-        .ejers:hover {
-            transform: scale(1.25);
-        }
-        #barraderecha {
-            grid-column: 26/31;
-            grid-row: 3/15;
-            object-fit: none;
-            padding-top: 12%;
-            margin-left: 15%;
-        }
-        .barradere {
-        }
+    .opciones2 {
+      padding-right: 5px; /*ARREGLAR ESTOOOO*/
+      height: 100%;
+      padding-top: 14px;
+    }
 
-        .opciones2 {
-            padding-right: 5px; /*ARREGLAR ESTOOOO*/
-            height: 100%;
-            padding-top: 14px;
-        }
+    #barraizquier {
+      grid-column: 1/21;
+      grid-row: 1/14;
+    }
 
-        #barraizquier {
-            grid-column: 1/21;
-            grid-row: 1/14;
-        }
+    .barraiz {
+      width: 100%;
+      height: 100%;
+    }
 
-        .barraiz {
-            width: 100%;
-            height: 100%;
-        }
-
-        .pregracc:hover {
-            color: blue;
-        }
-
-    
-    </style>
+    .pregracc:hover {
+      color: blue;
+    }
+  </style>
 </PaginaMaestra1>
